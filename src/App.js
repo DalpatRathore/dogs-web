@@ -5,6 +5,7 @@ import Search from "./pages/search/Search";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import Pics from "./pages/pics/Pics";
+import Facts from "./pages/facts/Facts";
 
 function App() {
   return (
@@ -13,7 +14,11 @@ function App() {
         <Header></Header>
         <Switch>
           <Route path="/pics">
+            {/* <h1>Page Completed</h1> */}
             <Pics></Pics>
+          </Route>
+          <Route path="/facts">
+            <Facts></Facts>
           </Route>
           <Route path="/search">
             <Search></Search>

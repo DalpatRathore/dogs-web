@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-
 import "./Header.css";
 import SearchIcon from "@material-ui/icons/Search";
+import { Link } from "react-router-dom";
 const Header = () => {
   const [input, setInput] = useState("");
 
@@ -12,7 +12,9 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header__logo">
-        <h1>Logo</h1>
+        <Link to="/">
+          <h1>Logo</h1>
+        </Link>
       </div>
       <form onSubmit={handlSubmit} className="header__form">
         <div className="header__searchBox">
