@@ -1,0 +1,49 @@
+.infoBadge {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  background: maroon;
+  padding: 0.2rem;
+  margin: 0.1rem 0;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+.infoBadge__labelStatic {
+  display: inline-block;
+  background: #666;
+  padding: 0.2rem 0.5rem;
+  margin-right: 0.2rem;
+  color: #eee;
+  border-radius: 5px;
+}
+
+.infoBadge__labelDynamic {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0.2rem 0.5rem;
+  margin-right: 0.2rem;
+  color: #ddd;
+  border-radius: 5px;
+}
+
+.infoBadge:hover {
+  background: #6e0000;
+}
+
+.infoBadge:hover .infoBadge__labelStatic {
+  color: #fff;
+}
+
+.infoBadge:hover .infoBadge__labelDynamic {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+}
+/*# sourceMappingURL=InfoBadge.css.map */

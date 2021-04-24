@@ -1,14 +1,44 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Photo.css";
 import ModalMaterialUi from "../modalMaterialUi/ModalMaterialUi";
+import Badge from "../badge/Badge";
 
-const Photo = ({ imageUrl }) => {
+const Photo = ({ imageUrl, altName = "Dog", serialNo }) => {
+  const [imageLoading, setImageLoading] = useState(true);
+  useEffect(() => {
+    setImageLoading(true);
+    const clearTime = setTimeout(() => {
+      setImageLoading(false);
+    }, 5000);
+    return () => {
+      clearTimeout(clearTime);
+    };
+  }, [imageUrl]);
   return (
     <div className="photo">
-      <div className="photo__overlay">
-        <img src={imageUrl} alt="" className="photo__img" />
+      <div className="photo__container">
+        {imageLoading ? (
+          <img
+            src="/images/imageLoader.gif"
+            alt={altName}
+            className="photo__img"
+          />
+        ) : (
+          <img
+            src={imageUrl ? imageUrl : "/images/imageLoader.gif"}
+            alt={altName}
+            // onError={e => (e.target.src = { LoaderImage })}
+            className="photo__img"
+          />
+        )}
       </div>
-      <ModalMaterialUi imageUrl={imageUrl}></ModalMaterialUi>
+      {serialNo && (
+        <div className="photo__badgeWrapper">
+          <Badge serialNo={serialNo}></Badge>
+        </div>
+      )}
+
+      {!imageLoading && <ModalMaterialUi imageUrl={imageUrl}></ModalMaterialUi>}
     </div>
   );
 };

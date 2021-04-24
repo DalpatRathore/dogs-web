@@ -1,0 +1,38 @@
+.infoBadge {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background: rgb(128, 0, 0);
+  padding: 0.2rem;
+  margin: 0.1rem 0;
+  letter-spacing: 1px;
+  font-size: 1rem;
+  border-radius: 5px;
+
+  &__labelStatic {
+    display: inline-block;
+    background: #666;
+    padding: 0.2rem 0.5rem;
+    margin-right: 0.2rem;
+    color: #eee;
+    border-radius: 5px;
+  }
+  &__labelDynamic {
+    display: inline-block;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.2rem 0.5rem;
+    margin-right: 0.2rem;
+    color: #ddd;
+    border-radius: 5px;
+  }
+  &:hover {
+    background: rgb(110, 0, 0);
+    .infoBadge__labelStatic {
+      color: #fff;
+    }
+    .infoBadge__labelDynamic {
+      color: #fff;
+      background: rgba(0, 0, 0, 0.6);
+    }
+  }
+}

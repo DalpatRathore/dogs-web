@@ -22,7 +22,7 @@ export default {
         id: "BJa4kxc4X",
         width: 1600,
         height: 1199,
-        url: "https://cdn2.thedogapi.com/images/BJa4kxc4X.jpg",
+        url: "https://cdn2.thedogapi.com/images/BJa4kxc4X.1jpg",
       },
     },
     {

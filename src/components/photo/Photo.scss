@@ -2,22 +2,58 @@
   width: 250px;
   height: 250px;
   padding: 0.5rem;
-  background-color: #069;
+  background-color: rgba(0, 0, 0, 0.5);
   margin: 1rem;
   position: relative;
-  border-radius: 10px;
+  border-radius: 5px;
 
-  &__overlay {
+  &__container {
+    position: relative;
+
     width: 100%;
     height: 100%;
-    border-radius: 10px;
-    box-shadow: 5px 5px 10px #000, -3px -2px 5px rgba(255, 253, 253, 0.3);
+    border-radius: 5px;
+    z-index: 100;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.6), -3px -3px 5px rgba(0, 0, 0, 0.6);
     & img {
       display: block;
       width: 100%;
       height: 100%;
-      border-radius: 10px;
+      border-radius: 5px;
       object-fit: fill;
     }
+  }
+  &__badgeWrapper {
+    position: absolute;
+    top: 0px;
+    left: -30px;
+    padding: 4px;
+    z-index: 101;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    bottom: -2%;
+    right: -5%;
+    width: 55%;
+    height: 95%;
+    box-shadow: 0 0 5px maroon;
+    border-radius: 2px;
+    // border: 2px solid maroon;
+    // background: saddlebrown;
+  }
+  &::after {
+    position: absolute;
+    content: "";
+    top: -2%;
+    left: -5%;
+    width: 55%;
+    height: 95%;
+    border-radius: 2px;
+    box-shadow: 0 0 5px maroon;
+    // border: 2px solid maroon;
+    // background: saddlebrown;
   }
 }
