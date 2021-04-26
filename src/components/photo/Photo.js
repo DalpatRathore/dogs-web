@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Photo.css";
 import ModalMaterialUi from "../modalMaterialUi/ModalMaterialUi";
 import Badge from "../badge/Badge";
+import { useSpring, animated } from "react-spring";
 
 const Photo = ({ imageUrl, altName = "Dog", serialNo }) => {
   const [imageLoading, setImageLoading] = useState(true);
@@ -14,9 +15,23 @@ const Photo = ({ imageUrl, altName = "Dog", serialNo }) => {
       clearTimeout(clearTime);
     };
   }, [imageUrl]);
+
+  const imageSpring = useSpring({
+    from: {
+      transform: "scale(0) rotate(0deg)",
+      opacity: 0.5,
+    },
+    to: {
+      transform: "scale(1) rotate(360deg)",
+      opacity: 1,
+    },
+    config: {
+      duration: 1000,
+    },
+  });
   return (
     <div className="photo">
-      <div className="photo__container">
+      <animated.div className="photo__container" style={imageSpring}>
         {imageLoading ? (
           <img
             src="/images/imageLoader.gif"
@@ -31,7 +46,7 @@ const Photo = ({ imageUrl, altName = "Dog", serialNo }) => {
             className="photo__img"
           />
         )}
-      </div>
+      </animated.div>
       {serialNo && (
         <div className="photo__badgeWrapper">
           <Badge serialNo={serialNo}></Badge>

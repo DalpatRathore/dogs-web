@@ -9,6 +9,7 @@ import responseImages from "../../fixtures/responseImages";
 import responseBreedImages from "../../fixtures/responseBreedImages";
 import Badge from "../../components/badge/Badge";
 import Loader from "../../components/loader/Loader";
+import { useSpring, animated } from "react-spring";
 
 const Pics = () => {
   const [breeds, setBreeds] = useState([]);
@@ -16,6 +17,33 @@ const Pics = () => {
   const [breedName, setBreedName] = useState("");
   const [loadingBreeds, setLoadingBreeds] = useState(true);
   const [loadingImages, setLoadingImages] = useState(true);
+
+  /* --- Spring Animation --- */
+
+  const loaderSpring = useSpring({
+    from: {
+      transform: "translate(-50%,-50%) scale(1)",
+    },
+    to: {
+      transform: "translate(-50%,-50%) scale(0)",
+    },
+    config: {
+      duration: 5000,
+    },
+  });
+  const breedSpring = useSpring({
+    from: {
+      transform: "translateX(-300%)",
+      opacity: 0.5,
+    },
+    to: {
+      transform: "translateX(0)",
+      opacity: 1,
+    },
+    config: {
+      duration: 500,
+    },
+  });
 
   /*--- This useEffect Brings all Breed Dog Names --- */
 
@@ -96,9 +124,12 @@ const Pics = () => {
 
         <div className="pics__imagesGrid">
           {loadingImages ? (
-            <div className="pics__loaderContainer">
+            <animated.div
+              className="pics__loaderContainer"
+              style={loaderSpring}
+            >
               <Loader loaderImg="/images/loader-3.gif"></Loader>
-            </div>
+            </animated.div>
           ) : breedName.length > 0 ? (
             images.map((image, index) => (
               <Photo key={index} imageUrl={image} serialNo={index + 1}></Photo>
@@ -118,7 +149,8 @@ const Pics = () => {
           </div>
         ) : (
           breeds.map((breed, index) => (
-            <p
+            <animated.p
+              style={breedSpring}
               className="pics__breedCategory"
               key={index}
               onClick={() => setBreedName(breed)}
@@ -126,7 +158,7 @@ const Pics = () => {
               <Badge serialNo={index + 1}></Badge>
 
               {breed}
-            </p>
+            </animated.p>
           ))
         )}
       </div>

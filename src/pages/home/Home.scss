@@ -1,6 +1,11 @@
 .home {
   min-height: 100vh;
   background: linear-gradient(rgb(84, 118, 134), rgb(223, 148, 223));
+  &__carouselContainer {
+    width: 600px;
+    height: 400px;
+    background: orange;
+  }
 }
 
 .home__banner {

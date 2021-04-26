@@ -1,0 +1,43 @@
+.searchBox {
+  width: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  &__form {
+    padding: 0.5rem 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    background-color: #fff;
+    width: 220px;
+    transition: width 0.5s ease-in-out;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    &:hover {
+      width: 260px;
+    }
+  }
+  &__inputField {
+    flex: 1;
+    font-size: 1rem;
+    padding: 0.2rem;
+    outline: none;
+    min-width: 100px;
+    font-weight: 520;
+    letter-spacing: 0.5px;
+    border: none;
+    margin-left: 0.2rem;
+  }
+  &__Btn {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    background: transparent;
+    color: #333;
+    font-size: 0.8rem;
+    &--searchClear {
+      border-left: 1px solid rgb(218, 210, 210);
+    }
+  }
+}

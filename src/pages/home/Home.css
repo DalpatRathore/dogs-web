@@ -4,6 +4,12 @@
   background: linear-gradient(#547686, #df94df);
 }
 
+.home__carouselContainer {
+  width: 600px;
+  height: 400px;
+  background: orange;
+}
+
 .home__banner {
   height: 500px;
   position: relative;

@@ -1,16 +1,18 @@
 import React from "react";
-import Footer from "../../components/footer/Footer";
-import Header from "../../components/header/Header";
 import "./Home.css";
 import { Link } from "react-router-dom";
-import bannerImg from "../../bannerImage-1.jpg";
 import starImg from "../../StarImage.JPG";
+import Carousel from "../../components/carousel/Carousel";
+// import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+// import { Carousel } from "react-responsive-carousel";
 
 const Home = () => {
   return (
     <div className="home">
       <div className="home__banner">
-        <img src={bannerImg} alt="Dog" />
+        <div className="home__carouselContainer">
+          <Carousel></Carousel>
+        </div>
         <div className="home__buttons">
           <Link to="/facts">
             <button className="btn btn--Info">Facts</button>

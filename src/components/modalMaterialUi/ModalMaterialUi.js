@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import Fade from "@material-ui/core/Fade";
 import CancelRoundedIcon from "@material-ui/icons/CancelRounded";
+import { useSpring, animated } from "react-spring";
 
 const useStyles = makeStyles(theme => ({
   modal: {

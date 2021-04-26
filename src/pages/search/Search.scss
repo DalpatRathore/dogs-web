@@ -1,4 +1,77 @@
 .search {
-  height: 30vh;
-  background: #025;
+  height: 90vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background: rgb(38, 122, 38);
+  padding-bottom: 2rem;
+  position: relative;
+
+  &__loaderContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: maroon;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+  }
+
+  & h3 {
+    position: sticky;
+    padding: 1rem 0;
+    top: 0;
+    z-index: 999;
+    text-align: center;
+    color: #fff;
+    letter-spacing: 2px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 1px 15px 5px rgba(255, 255, 255, 0.6);
+  }
+
+  &__container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 1rem 1rem 1rem;
+  }
+  &__info {
+    width: 90%;
+    background: rgb(231, 231, 120);
+    box-shadow: 0 0 5px #111;
+    padding: 1rem 0.5rem 0.5rem 1rem;
+    border-radius: 5px;
+    position: relative;
+  }
+  &__badgeWrapper {
+    position: absolute;
+    top: -1.2rem;
+    left: 0rem;
+    padding: 3px;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.8);
+  }
+  &__messageContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 250px;
+    box-shadow: 0 0 5px #111;
+    background: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 2px;
+    border-radius: 10px;
+    z-index: 1000;
+  }
 }
