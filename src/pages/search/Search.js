@@ -1,19 +1,20 @@
-import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import React, { useState, useEffect, useReducer, useContext } from "react";
 import "./Search.css";
-import Photo from "../../components/photo/Photo";
 import InfoBadge from "../../components/infoBadge/InfoBadge";
 import Badge from "../../components/badge/Badge";
 import Loader from "../../components/loader/Loader";
 import axios from "axios";
+import { SearchContext } from "../../contexts/SearchContext";
+
 const Search = () => {
-  const history = useHistory();
   const [loadingResults, setLoadingResults] = useState(true);
-  const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const { searchTerm } = useContext(SearchContext);
+
   useEffect(() => {
+    setLoadingResults(true);
     axios
-      .get(`https://api.thedogapi.com/v1/breeds/search?q=${searchTerm}`)
+      .get(`https://api.thedogapi.com/v1/breeds/search?q=${searchTerm.term}`)
       .then(response => {
         setSearchResults(response);
         setLoadingResults(false);
@@ -22,9 +23,7 @@ const Search = () => {
       .catch(error => {
         console.log("error :>> ", error);
       });
-  }, []);
-
-  console.log("searchTerm :>> ", searchTerm);
+  }, [searchTerm.term]);
 
   return (
     <div className="search">

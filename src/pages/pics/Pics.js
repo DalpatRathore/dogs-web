@@ -9,7 +9,7 @@ import responseImages from "../../fixtures/responseImages";
 import responseBreedImages from "../../fixtures/responseBreedImages";
 import Badge from "../../components/badge/Badge";
 import Loader from "../../components/loader/Loader";
-import { useSpring, animated } from "react-spring";
+import { motion } from "framer-motion";
 
 const Pics = () => {
   const [breeds, setBreeds] = useState([]);
@@ -18,36 +18,22 @@ const Pics = () => {
   const [loadingBreeds, setLoadingBreeds] = useState(true);
   const [loadingImages, setLoadingImages] = useState(true);
 
-  /* --- Spring Animation --- */
-
-  const loaderSpring = useSpring({
-    from: {
-      transform: "translate(-50%,-50%) scale(1)",
+  /* --- Framer Animation --- */
+  const loaderVariants = {
+    initial: {
+      rotate: 0,
     },
-    to: {
-      transform: "translate(-50%,-50%) scale(0)",
+    animate: {
+      rotate: 360,
+      transition: {
+        duration: 1,
+      },
     },
-    config: {
-      duration: 5000,
-    },
-  });
-  const breedSpring = useSpring({
-    from: {
-      transform: "translateX(-300%)",
-      opacity: 0.5,
-    },
-    to: {
-      transform: "translateX(0)",
-      opacity: 1,
-    },
-    config: {
-      duration: 500,
-    },
-  });
-
+  };
   /*--- This useEffect Brings all Breed Dog Names --- */
 
   useEffect(() => {
+    setLoadingBreeds(true);
     axios
       .get("https://dog.ceo/api/breeds/list/all")
       .then(response => {
@@ -124,12 +110,14 @@ const Pics = () => {
 
         <div className="pics__imagesGrid">
           {loadingImages ? (
-            <animated.div
+            <motion.div
               className="pics__loaderContainer"
-              style={loaderSpring}
+              variants={loaderVariants}
+              initial="initial"
+              animate="animate"
             >
               <Loader loaderImg="/images/loader-3.gif"></Loader>
-            </animated.div>
+            </motion.div>
           ) : breedName.length > 0 ? (
             images.map((image, index) => (
               <Photo key={index} imageUrl={image} serialNo={index + 1}></Photo>
@@ -149,8 +137,7 @@ const Pics = () => {
           </div>
         ) : (
           breeds.map((breed, index) => (
-            <animated.p
-              style={breedSpring}
+            <motion.p
               className="pics__breedCategory"
               key={index}
               onClick={() => setBreedName(breed)}
@@ -158,7 +145,7 @@ const Pics = () => {
               <Badge serialNo={index + 1}></Badge>
 
               {breed}
-            </animated.p>
+            </motion.p>
           ))
         )}
       </div>

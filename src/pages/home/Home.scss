@@ -2,8 +2,9 @@
   min-height: 100vh;
   background: linear-gradient(rgb(84, 118, 134), rgb(223, 148, 223));
   &__carouselContainer {
-    width: 600px;
-    height: 400px;
+    margin: 0 auto;
+    width: 100%;
+    height: 500px;
     background: orange;
   }
 }
