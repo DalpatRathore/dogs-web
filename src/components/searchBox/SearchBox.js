@@ -6,6 +6,7 @@ import CloseRoundedIcon from "@material-ui/icons/CloseRounded";
 import { SearchContext } from "../../contexts/SearchContext";
 
 const SearchBox = () => {
+  
   const history = useHistory();
   const [input, setInput] = useState("");
   const { dispatch } = useContext(SearchContext);
@@ -18,6 +19,7 @@ const SearchBox = () => {
       type: "SEARCH_TERM",
       payload: input,
     });
+    
   };
   const handleClearSearch = () => {
     setInput("");
@@ -25,22 +27,22 @@ const SearchBox = () => {
   return (
     <div className="searchBox">
       <form onSubmit={handlSubmit} className="searchBox__form">
-        <button type="submit" className="searchBox__Btn">
-          <SearchIcon></SearchIcon>
+        <button type="submit" className="searchBox__btn">
+          <SearchIcon className="searchBox__icon"></SearchIcon>
         </button>
         <input
           type="text"
           value={input}
           onChange={e => setInput(e.target.value)}
           className="searchBox__inputField"
-          placeholder="Search a dog breed"
+          placeholder="Search"
         />
         {input.length > 0 && (
           <button
             onClick={handleClearSearch}
-            className="searchBox__Btn searchBox__Btn--searchClear"
+            className="searchBox__btn searchBox__btn--searchClear"
           >
-            <CloseRoundedIcon></CloseRoundedIcon>
+            <CloseRoundedIcon className="searchBox__icon"></CloseRoundedIcon>
           </button>
         )}
       </form>

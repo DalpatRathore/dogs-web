@@ -1,50 +1,125 @@
 import React, { useState, useEffect } from "react";
 import "./Carousel.css";
+import { FiChevronRight, FiChevronLeft } from "react-icons/fi";
+import { largeImages, smallImages } from "./carouseldata";
+import HeroBg from "../hero-image-bg/HeroBg";
+import { motion, AnimatePresence } from "framer-motion";
+import { v1 as uuidv1 } from "uuid";
 
-const slides = [
-  {
-    id: 0,
-    slideUrl: "https://cdn2.thedogapi.com/images/hMyT4CDXR.jpg",
+const carouselVariants = {
+  enter: {
+    scale: 0,
+    opacity: 0,
   },
-  {
-    id: 1,
-    slideUrl: "https://images.dog.ceo/breeds/akita/An_Akita_Inu_resting.jpg",
+  center: {
+    scale: 1,
+    opacity: 1,
+    transition: { duration: 0.5 },
   },
-  {
-    id: 2,
-    slideUrl: "https://images.dog.ceo/breeds/redbone/n02090379_4138.jpg",
+};
+
+const slideVariants = {
+  enter: {
+    x: "100vw",
+    scale: 0,
   },
-  {
-    id: 3,
-    slideUrl: "https://images.dog.ceo/breeds/dalmatian/cooper2.jpg",
+  center: {
+    x: 0,
+    scale: 1,
+    transition: {
+      duration: 1,
+    },
   },
-  {
-    id: 4,
-    slideUrl: "https://cdn2.thedogapi.com/images/-HgpNnGXl.jpg",
+  exit: {
+    x: "-100vw",
+    scale: 0,
+    transition: {
+      duration: 0.5,
+    },
   },
-];
+};
 
 const Carousel = () => {
+  const [slides, setSlides] = useState(smallImages);
   const [slideIndex, setSlideIndex] = useState(0);
-  const slide = slides[slideIndex];
+  const [viewWidth, setViewWidth] = useState(window.innerWidth);
 
-  const increment = () => {
-    setSlideIndex(prevCount => (prevCount + 1) % slides.length);
-  };
   useEffect(() => {
-    const clearIntval = setInterval(increment, 2000);
-    return () => {
-      clearInterval(clearIntval);
+    const resizeListener = () => {
+      setViewWidth(window.innerWidth);
     };
-  }, []);
+    window.addEventListener("resize", resizeListener);
+    if (viewWidth >= 1024) {
+      setSlides(largeImages);
+    } else {
+      setSlides(smallImages);
+    }
 
-    return (
-      <div
-        className="carousel" key={slide}
-        style={{ backgroundImage: `url(${slide.slideUrl})`}}
-      ></div>
-    );
-  
+    const lastslideIndex = slides.length - 1;
+    if (slideIndex < 0) {
+      setSlideIndex(lastslideIndex);
+    }
+    if (slideIndex > lastslideIndex) {
+      setSlideIndex(0);
+    }
+
+    return () => {
+      window.removeEventListener("resize", resizeListener);
+    };
+  }, [slideIndex, slides, viewWidth]);
+
+  useEffect(() => {
+    let slider = setInterval(() => {
+      setSlideIndex(slideIndex + 1);
+    }, 5000);
+    return () => {
+      clearInterval(slider);
+    };
+  }, [slideIndex]);
+
+  return (
+    <motion.div
+      className="carousel"
+      variants={carouselVariants}
+      initial="enter"
+      animate="center"
+    >
+      <AnimatePresence>
+        {slides.map((slide, index) => {
+          const { id, image } = slide;
+
+          return (
+            <motion.div
+              className={`carousel__imgContainer ${
+                index === slideIndex ? "carousel__active" : ""
+              }`}
+              key={uuidv1()}
+              variants={slideVariants}
+              initial="enter"
+              animate="center"
+              exit="exit"
+            >
+              {/* <img src={image} alt="dog" /> */}
+              <HeroBg image={image}></HeroBg>
+            </motion.div>
+          );
+        })}
+      </AnimatePresence>
+
+      <button
+        className="carousel__prev"
+        onClick={() => setSlideIndex(slideIndex - 1)}
+      >
+        <FiChevronLeft></FiChevronLeft>
+      </button>
+      <button
+        className="carousel__next"
+        onClick={() => setSlideIndex(slideIndex + 1)}
+      >
+        <FiChevronRight></FiChevronRight>
+      </button>
+    </motion.div>
+  );
 };
 
 export default Carousel;

@@ -1,7 +1,122 @@
 .carousel {
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  width: 100%;
+  margin: 0 auto;
+  width: 95%;
   height: 100%;
+  position: relative;
+  background: linear-gradient(
+    0deg,
+    transparent,
+    rgba(9, 38, 65, 0.8),
+    transparent
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 1;
+  &::before {
+    position: absolute;
+    content: "";
+    top: 1%;
+    left: 1%;
+    width: 250px;
+    height: 200px;
+    border-radius: 32% 68% 30% 70% / 74% 7% 93% 26%;
+    background: linear-gradient(120deg, rgba(255, 165, 0, 0.9), transparent);
+
+    z-index: -5;
+  }
+  &::after {
+    position: absolute;
+    content: "";
+    bottom: 1%;
+    right: 1%;
+    width: 300px;
+    height: 300px;
+    border-radius: 88% 12% 25% 75% / 48% 48% 52% 52%;
+    background: rgba(16, 6, 107, 0.2);
+    z-index: -5;
+  }
+
+  &__prev,
+  &__next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.2);
+    color: #999;
+    border: 0.121rem solid rgb(35, 8, 99);
+    font-size: 1.2rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background 0.3s linear;
+  }
+  &__prev {
+    left: 1%;
+  }
+  &__next {
+    right: 1%;
+  }
+  &__prev:hover,
+  &__next:hover {
+    background: rgb(35, 8, 99);
+    color: #fff;
+  }
+
+  &__imgContainer {
+    width: 75%;
+    height: 90%;
+    display: none;
+    border-radius: 0.5rem;
+  }
+  &__active {
+    display: block;
+    transform-origin: center center;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .carousel {
+    &__prev,
+    &__next {
+      width: 2.25rem;
+      height: 2.25rem;
+      font-size: 1.5rem;
+    }
+
+    &__imgContainer {
+      width: 80%;
+      height: 95%;
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .carousel {
+    &__imgContainer {
+      width: 85%;
+      height: 95%;
+    }
+  }
+}
+@media screen and (min-width: 1024px) {
+  .carousel {
+    &__imgContainer {
+      width: 90%;
+      height: 95%;
+    }
+  }
+}
+@media screen and (min-width: 1200px) {
+  .carousel {
+    &__imgContainer {
+      width: 90%;
+      height: 95%;
+    }
+  }
 }

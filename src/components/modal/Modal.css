@@ -1,0 +1,160 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: rgba(0, 0, 0, 0.99);
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+}
+
+.modal__show {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+  z-index: 2222;
+}
+
+.modal__overlay {
+  position: relative;
+  width: 95%;
+  max-width: 1920px;
+  height: 95%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(236, 143, 21, 0.5)), to(rgba(11, 51, 71, 0.8)));
+  background: linear-gradient(0deg, rgba(236, 143, 21, 0.5), rgba(11, 51, 71, 0.8));
+  border-radius: 0.5rem;
+  z-index: 1;
+}
+
+.modal__overlay::before {
+  position: absolute;
+  content: "";
+  bottom: 2%;
+  right: 1%;
+  width: 300px;
+  height: 250px;
+  border-radius: 32% 68% 30% 70% / 74% 7% 93% 26%;
+  background: linear-gradient(-45deg, #440730, rgba(255, 165, 0, 0.8));
+  z-index: -1;
+}
+
+.modal__overlay::after {
+  position: absolute;
+  content: "";
+  top: 5%;
+  left: 1%;
+  width: 300px;
+  height: 250px;
+  border-radius: 40% 60% 6% 94% / 51% 42% 58% 49%;
+  background: -webkit-gradient(linear, right top, left top, from(rgba(15, 92, 31, 0.2)), to(rgba(185, 43, 24, 0.5)));
+  background: linear-gradient(-90deg, rgba(15, 92, 31, 0.2), rgba(185, 43, 24, 0.5));
+  z-index: -1;
+}
+
+.modal__imgContainer {
+  width: 95%;
+  height: 95%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  z-index: 1;
+  border-radius: 0.5rem;
+  background: -webkit-gradient(linear, left bottom, left top, from(transparent), color-stop(rgba(11, 51, 71, 0.8)), to(transparent));
+  background: linear-gradient(0deg, transparent, rgba(11, 51, 71, 0.8), transparent);
+}
+
+.modal__imgContainer::before {
+  position: absolute;
+  content: "";
+  top: -2%;
+  right: -1%;
+  width: 200px;
+  height: 200px;
+  border-radius: 72% 28% 22% 78% / 30% 20% 80% 70%;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(190, 143, 14, 0.5)), to(rgba(17, 16, 83, 0.5)));
+  background: linear-gradient(0deg, rgba(190, 143, 14, 0.5), rgba(17, 16, 83, 0.5));
+  z-index: -5;
+}
+
+.modal__imgContainer::after {
+  position: absolute;
+  content: "";
+  bottom: 1%;
+  left: 2%;
+  width: 400px;
+  height: 300px;
+  border-radius: 88% 12% 25% 75% / 48% 48% 52% 52%;
+  background: rgba(16, 6, 107, 0.2);
+  z-index: -5;
+}
+
+.modal__imgContainer img {
+  width: 95%;
+  height: 95%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  border-radius: 0.5rem;
+}
+
+.modal__btnClose {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: rgba(255, 165, 0, 0.8);
+  border: 0.15rem solid #fff;
+  color: maroon;
+  -webkit-transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.modal__btnClose:hover {
+  background: maroon;
+  color: #fff;
+}
+/*# sourceMappingURL=Modal.css.map */

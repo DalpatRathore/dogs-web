@@ -1,7 +1,14 @@
 .footer {
-  background: #000;
-  color: #fff;
-  height: 8vh;
+  height: var(--footerHeight);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(6, 59, 158, 0.7)), to(rgba(255, 165, 0, 0.7)));
+  background: linear-gradient(180deg, rgba(6, 59, 158, 0.7), rgba(255, 165, 0, 0.7));
+}
+
+.footer__container {
+  height: 100%;
+  background: linear-gradient(45deg, transparent, #0e3a72 20%, #f7cf4b 20%, #791c81 80%, #0e3a72 80%, transparent);
+  max-width: 1920px;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11,5 +18,53 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.footer__socialIcons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer__socialIcon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  margin-right: 0.8rem;
+  background: #184f77;
+  -webkit-box-shadow: 0 0 3px #111;
+          box-shadow: 0 0 3px #111;
+  -webkit-transition: background 0.3s ease, -webkit-box-shadow 0.3s ease-out;
+  transition: background 0.3s ease, -webkit-box-shadow 0.3s ease-out;
+  transition: background 0.3s ease, box-shadow 0.3s ease-out;
+  transition: background 0.3s ease, box-shadow 0.3s ease-out, -webkit-box-shadow 0.3s ease-out;
+  cursor: pointer;
+}
+
+.footer__socialIcon a {
+  display: inline-block;
+  font-size: 1rem;
+  color: #ddd;
+  -webkit-transition: color 0.3s linear;
+  transition: color 0.3s linear;
+}
+
+.footer__socialIcon:hover {
+  background: maroon;
+  -webkit-box-shadow: 1px 1px 5px #111;
+          box-shadow: 1px 1px 5px #111;
+}
+
+.footer__socialIcon:hover a {
+  color: #fff;
 }
 /*# sourceMappingURL=Footer.css.map */

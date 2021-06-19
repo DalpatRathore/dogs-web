@@ -1,43 +1,104 @@
 .searchBox {
-  width: 260px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-
+  width: 100%;
   &__form {
-    padding: 0.5rem 0.8rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 40px;
-    background-color: #fff;
-    width: 220px;
+    border-radius: 0.15rem;
+    background-color: transparent;
+    width: 100%;
     transition: width 0.5s ease-in-out;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    &:hover {
-      width: 260px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+    color: rgb(35, 8, 99);
+    border: 0.11rem solid rgb(35, 8, 99);
+    box-shadow: 0 0 1px #111;
+    padding: 0.4rem;
+    letter-spacing: 0.15rem;
+    font-size: 1rem;
+    font-weight: 650;
+    transition: background 0.5s ease-out, color 0.5s ease-out,
+      box-shadow 0.5s ease-out;
+
+    &:hover,
+    &:focus-within {
+      background-color: #fff;
+      box-shadow: 0 0 2px #111;
     }
   }
   &__inputField {
     flex: 1;
-    font-size: 1rem;
+    font-size: 0.9rem;
     padding: 0.2rem;
     outline: none;
-    min-width: 100px;
-    font-weight: 520;
-    letter-spacing: 0.5px;
+    min-width: 5rem;
+    font-weight: 300;
     border: none;
-    margin-left: 0.2rem;
+    margin-left: 0.1rem;
+    background: transparent;
   }
-  &__Btn {
+  &__btn {
     cursor: pointer;
-    outline: none;
     border: none;
     background: transparent;
-    color: #333;
-    font-size: 0.8rem;
+
+    color: rgb(35, 8, 99);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
     &--searchClear {
       border-left: 1px solid rgb(218, 210, 210);
+    }
+  }
+  &__icon {
+    font-size: 1.3rem !important;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .searchBox {
+    width: 17.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    &__form {
+      border-radius: 0.5rem;
+      width: 10rem;
+      transition: width 0.5s ease-out;
+      &:hover,
+      &:focus-within {
+        width: 17.5rem;
+      }
+    }
+    &__inputField {
+      font-size: 1.1rem;
+      font-weight: 500;
+      letter-spacing: 0.05rem;
+    }
+
+    &__icon {
+      font-size: 1.8rem !important;
+    }
+  }
+}
+@media screen and (min-width: 1440px) {
+  .searchBox {
+    width: 20rem;
+    &__form {
+      &:hover,
+      &:focus-within {
+        width: 20rem;
+      }
+    }
+
+    &__inputField {
+      font-size: 1.3rem;
+      font-weight: 550;
+      letter-spacing: 0.15rem;
+    }
+
+    &__icon {
+      font-size: 2rem !important;
     }
   }
 }

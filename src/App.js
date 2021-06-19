@@ -1,4 +1,3 @@
-import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
 import Search from "./pages/search/Search";
@@ -15,20 +14,17 @@ function App() {
         <SearchContextProvider>
           <Header></Header>
           <Switch>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
             <Route path="/pics">
-              {/* <h1>Page Completed</h1> */}
               <Pics></Pics>
             </Route>
             <Route path="/facts">
-              {/* <h1>Facts Completed</h1> */}
               <Facts></Facts>
             </Route>
             <Route path="/search">
-              {/* <h1>Search Page Completed</h1> */}
               <Search></Search>
-            </Route>
-            <Route path="/">
-              <Home></Home>
             </Route>
           </Switch>
           <Footer></Footer>

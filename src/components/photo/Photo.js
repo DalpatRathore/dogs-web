@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./Photo.css";
-import ModalMaterialUi from "../modalMaterialUi/ModalMaterialUi";
-import Badge from "../badge/Badge";
-import { useSpring, animated } from "react-spring";
+import Modal from "../modal/Modal";
+import { SiDatadog } from "react-icons/si";
 
-const Photo = ({ imageUrl, altName = "Dog", serialNo }) => {
+const Photo = ({ imageUrl, altName = "dog", serialNo }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [imageLoading, setImageLoading] = useState(true);
+
   useEffect(() => {
     setImageLoading(true);
     const clearTime = setTimeout(() => {
@@ -15,45 +16,41 @@ const Photo = ({ imageUrl, altName = "Dog", serialNo }) => {
       clearTimeout(clearTime);
     };
   }, [imageUrl]);
-
-  const imageSpring = useSpring({
-    from: {
-      transform: "scale(0) rotate(0deg)",
-      opacity: 0.5,
-    },
-    to: {
-      transform: "scale(1) rotate(360deg)",
-      opacity: 1,
-    },
-    config: {
-      duration: 1000,
-    },
-  });
+  const handleClose = () => {
+    setIsModalOpen(false);
+  };
+  const handleOpen = () => {
+    setIsModalOpen(true);
+  };
   return (
     <div className="photo">
-      <animated.div className="photo__container" style={imageSpring}>
+      <div className="photo__container">
         {imageLoading ? (
-          <img
-            src="/images/imageLoader.gif"
-            alt={altName}
-            className="photo__img"
-          />
+          <img src="/images/imageLoader.gif" alt={altName} />
         ) : (
           <img
             src={imageUrl ? imageUrl : "/images/imageLoader.gif"}
             alt={altName}
-            // onError={e => (e.target.src = { LoaderImage })}
-            className="photo__img"
+            onClick={handleOpen}
           />
         )}
-      </animated.div>
-      {serialNo && (
-        <div className="photo__badgeWrapper">
-          <Badge serialNo={serialNo}></Badge>
-        </div>
-      )}
-
-      {!imageLoading && <ModalMaterialUi imageUrl={imageUrl}></ModalMaterialUi>}
+        {serialNo && (
+          <div className="photo__badgeWrapper">
+            <span>{serialNo}</span>
+          </div>
+        )}
+        {imageUrl && (
+          <button className="photo__btnOpen" onClick={handleOpen}>
+            <SiDatadog className="icon" />
+            VIEW
+          </button>
+        )}
+      </div>
+      <Modal
+        imageUrl={imageUrl}
+        isModalOpen={isModalOpen}
+        handleClose={handleClose}
+      ></Modal>
     </div>
   );
 };

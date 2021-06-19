@@ -1,37 +1,187 @@
 .header {
-  background: rgba($color: #000000, $alpha: 0.3);
-  backdrop-filter: blur(5px);
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 1.5rem;
-  color: #fff;
+  height: var(--headerHeight);
   position: sticky;
   top: 0;
   z-index: 1111;
-  & a {
-    text-decoration: none;
-  }
-  &__navLinks {
-    // background: chartreuse;
+  background: rgba(0, 0, 0, 0.3);
+  background: linear-gradient(
+    0deg,
+    rgba(7, 45, 65, 0.5),
+    rgba(255, 165, 0, 0.5)
+  );
+  backdrop-filter: blur(5px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(7, 45, 65, 0.5);
+
+  &__navbar {
+    margin: 0 auto;
+    height: 100%;
+    width: 95vw;
+    max-width: 1920px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+  }
 
+  &__logo {
+    width: 14rem;
+    border-radius: 0.25rem;
+    & img {
+      width: 100%;
+      border-radius: 0.25rem;
+      object-fit: contain;
+      display: block;
+    }
+  }
+
+  &__navLinks {
+    display: none;
+  }
+  &__navToggleLinks {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: absolute;
+    top: var(--headerHeight);
+    left: 0;
+    width: 100%;
+    height: 200px;
+    background: linear-gradient(
+      0deg,
+      rgba(7, 45, 65, 1),
+      rgba(255, 165, 0, 0.9)
+    );
+
+    padding: 0.5rem;
+    transform: scale(0);
+    transform-origin: top right;
+    transition: transform 0.3s ease-out;
     & a {
-      padding: 0.3rem 0.8rem;
-      background: maroon;
-      border-radius: 5px;
-      color: #888;
-      letter-spacing: 2px;
-      // background: red;
-      margin-right: 0.5rem;
-      box-shadow: 0 0 2px #111;
+      border-radius: 0.15rem;
+      background: transparent;
+      color: rgb(35, 8, 99);
+      border: 0.11rem solid rgb(35, 8, 99);
+      text-transform: uppercase;
       cursor: pointer;
+      box-shadow: 0 0 1px #111;
+      padding: 0.4rem;
+      letter-spacing: 0.15rem;
+      font-size: 1rem;
+      font-weight: 650;
+      transition: background 0.5s ease-out, color 0.5s ease-out,
+        box-shadow 0.5s ease-out, padding-left 0.5s ease-in-out;
       &:hover {
-        background: maroon;
+        background: rgb(35, 8, 99);
         color: #fff;
+        box-shadow: 0 0 5px #111;
+        padding-left: 1.2rem;
       }
+    }
+  }
+  &__navToggleLinks--active {
+    transform: scale(1);
+  }
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  &__toggleSearchBox {
+    display: block;
+  }
+  &__searchBoxContainer {
+    margin-right: 0.5rem;
+    background: transparent;
+    display: none;
+  }
+
+  &__navToggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    background: rgba(17, 17, 17, 0.1);
+    border: 1px solid rgba(17, 17, 17, 0.5);
+    cursor: pointer;
+    box-shadow: 0px 0px 1px #111;
+    transition: box-shadow 0.3s ease-in-out;
+    border-radius: 0.25rem;
+    &:hover {
+      box-shadow: 0px 0px 4px rgba(17, 17, 17, 0.6);
+    }
+  }
+  &__open {
+    color: hsl(206, 83%, 16%);
+  }
+  &__close {
+    color: maroon;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    &__logo {
+      width: 16rem;
+    }
+    &__toggleSearchBox {
+      display: none;
+    }
+    &__searchBoxContainer {
+      margin-right: 0.5rem;
+      background: transparent;
+      display: block;
+    }
+    &__navToggle {
+      display: none;
+    }
+    &__navLinks {
+      display: flex;
+      align-items: center;
+
+      & a {
+        border-radius: 0.25rem;
+        background: transparent;
+        color: rgb(35, 8, 99);
+        border: 0.11rem solid rgb(35, 8, 99);
+        text-transform: uppercase;
+        cursor: pointer;
+        box-shadow: 0 0 1px #111;
+        padding: 0.4rem 0.8rem;
+        letter-spacing: 0.15rem;
+        margin-right: 0.8rem;
+        font-size: 1.1rem;
+        font-weight: 520;
+
+        transition: background 0.5s ease-out, color 0.5s ease-out,
+          box-shadow 0.5s ease-out;
+        &:hover {
+          background: rgb(35, 8, 99);
+          color: #fff;
+          box-shadow: 0 0 5px #111;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .header {
+    padding: 0 2rem;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__logo {
+      width: 20rem;
+    }
+    &__navLinks a {
+      padding: 0.5rem 1rem;
+      letter-spacing: 0.25rem;
+      margin-right: 1rem;
+      font-size: 1.1rem;
+      font-weight: 800;
     }
   }
 }

@@ -2,25 +2,68 @@ import React, { useEffect, useState } from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
 import SearchBox from "../searchBox/SearchBox";
+import { FaBars, FaTimes } from "react-icons/fa";
+// import logo from "./logo.svg";
+import Logo from "./Logo";
+
 const Header = () => {
+  const [showLinks, setShowLinks] = useState(false);
+
+  const handleShowLinks = () => {
+    setShowLinks(!showLinks);
+  };
   return (
     <header className="header">
-      <div className="header__logo">
-        <Link to="/">
-          <h1>Logo</h1>
-        </Link>
-      </div>
-      <nav className="header__navLinks">
-        <Link to="/facts">
-          <h1>Facts</h1>
-        </Link>
-        <Link to="/pics">
-          <h1>Images</h1>
-        </Link>
+      <nav className="header__navbar">
+        <div className="header__logo">
+          <Link to="/">
+            {/* <img src={logo} alt="dog breeds" /> */}
+            <Logo></Logo>
+          </Link>
+        </div>
+
+        <nav className="header__navLinks">
+          <Link to="/">Home</Link>
+          <Link to="/pics">Images</Link>
+          <Link to="/facts">Facts</Link>
+        </nav>
+        <nav
+          className={` ${
+            showLinks
+              ? "header__navToggleLinks header__navToggleLinks--active"
+              : "header__navToggleLinks"
+          }`}
+        >
+          <Link to="/" onClick={() => setShowLinks(!showLinks)}>
+            Home
+          </Link>
+          <Link to="/pics" onClick={() => setShowLinks(!showLinks)}>
+            Images
+          </Link>
+          <Link to="/facts" onClick={() => setShowLinks(!showLinks)}>
+            Facts
+          </Link>
+          <span className="header__toggleSearchBox">
+            <SearchBox></SearchBox>
+          </span>
+        </nav>
+        <div className="header__wrapper">
+          <div className="header__searchBoxContainer">
+            <SearchBox></SearchBox>
+          </div>
+
+          <button
+            className="header__navToggle"
+            onClick={() => setShowLinks(!showLinks)}
+          >
+            {showLinks ? (
+              <FaTimes className="header__close"></FaTimes>
+            ) : (
+              <FaBars className="header__open"></FaBars>
+            )}
+          </button>
+        </div>
       </nav>
-      <div className="header__searchBoxContainer">
-        <SearchBox></SearchBox>
-      </div>
     </header>
   );
 };
