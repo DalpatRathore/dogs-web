@@ -4,41 +4,10 @@ import axios from "axios";
 import Photo from "../../components/photo/Photo";
 import Loader from "../../components/loader/Loader";
 import { motion } from "framer-motion";
-import { useFetchAPI } from "../../components/hookFetchAPI/useFetchAPI";
-import responseBreeds from "../../fixtures/responseBreeds";
-import responseImages from "../../fixtures/responseImages";
-import responseBreedImages from "../../fixtures/responseBreedImages";
+import { InView } from "react-intersection-observer";
 import ErrorMessage from "../../components/error-message/ErrorMessage";
-import { v1 as uuidv1 } from "uuid";
-import ScrollProgress from "../../components/scroll-progress/ScrollProgress";
+
 /* ---- Framer Animation ---- */
-const imagesVariants = {
-  enter: {
-    scale: 0,
-    opacity: 0,
-  },
-  center: {
-    scale: 1,
-    opacity: 1,
-    transition: {
-      duration: 1,
-    },
-  },
-};
-const breedsVariants = {
-  enter: {
-    x: "100vw",
-    scale: 0,
-  },
-  center: {
-    x: 0,
-    scale: 1,
-    transition: {
-      delay: 0.5,
-      duration: 0.5,
-    },
-  },
-};
 
 const headingVariants = {
   enter: {
@@ -69,11 +38,6 @@ const countVariants = {
 };
 
 const Pics = () => {
-  // const [breeds, setBreeds] = useState(Object.keys(responseBreeds.message));
-  // const [images, setImages] = useState(responseImages.message);
-  // const [loadingBreeds, setLoadingBreeds] = useState(false);
-  // const [loadingImages, setLoadingImages] = useState(false);
-
   const [breeds, setBreeds] = useState([]);
   const [images, setImages] = useState([]);
   const [breedName, setBreedName] = useState("");
@@ -82,9 +46,6 @@ const Pics = () => {
   const [errorBreeds, setErrorBreeds] = useState(false);
   const [errorImages, setErrorImages] = useState(false);
 
-  // variants={loaderVariants}
-  //                 initial="initial"
-  //                 animate="animate"
   /*---- useEffect Brings all Breed Dog Names ---- */
 
   useEffect(() => {
@@ -221,15 +182,21 @@ const Pics = () => {
               ) : (
                 <div className="pics__imagesGrid">
                   {images.map((image, index) => (
-                    <motion.div
-                      className="pics__photoWrapper"
-                      key={index}
-                      variants={imagesVariants}
-                      initial="enter"
-                      animate="center"
-                    >
-                      <Photo imageUrl={image} serialNo={index + 1}></Photo>
-                    </motion.div>
+                    <InView threshold={0} triggerOnce="true" key={index}>
+                      {({ inView, ref }) => (
+                        <motion.div
+                          className="pics__photoWrapper"
+                          ref={ref}
+                          initial={{ scale: 0, opacity: 0 }}
+                          animate={inView && { scale: 1, opacity: 1 }}
+                          // transition={{
+                          //   duration: 0.3,
+                          // }}
+                        >
+                          <Photo imageUrl={image} serialNo={index + 1}></Photo>
+                        </motion.div>
+                      )}
+                    </InView>
                   ))}
                 </div>
               )}
@@ -250,18 +217,23 @@ const Pics = () => {
                 </div>
               ) : (
                 breeds.map((breed, index) => (
-                  <motion.p
-                    className="pics__breedCategory"
-                    key={index}
-                    variants={breedsVariants}
-                    initial="enter"
-                    animate="center"
-                    onClick={() => setBreedName(breed)}
-                  >
-                    <span>{index + 1}.</span>
-
-                    {breed}
-                  </motion.p>
+                  <InView threshold={0} triggerOnce="true" key={index}>
+                    {({ inView, ref }) => (
+                      <motion.p
+                        className="pics__breedCategory"
+                        ref={ref}
+                        initial={{ x: "100%" }}
+                        animate={inView && { x: "0" }}
+                        transition={{
+                          duration: 0.3,
+                        }}
+                        onClick={() => setBreedName(breed)}
+                      >
+                        <span>{index + 1}.</span>
+                        {breed}
+                      </motion.p>
+                    )}
+                  </InView>
                 ))
               )}
             </>

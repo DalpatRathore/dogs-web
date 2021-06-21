@@ -186,7 +186,6 @@ const Logo = () => {
       />
       <motion.path
         d="M239.744 15.7495H220V19.6502H239.744V15.7495Z"
-        fill="url(#paint11_linear)"
         stroke="url(#paint11_linear)"
         strokeWidth=".5"
         initial={{
@@ -204,7 +203,6 @@ const Logo = () => {
       />
       <motion.path
         d="M220 35.2529H239.744V39.1536H223.59V59.6322H220V35.2529Z"
-        fill="url(#paint12_linear)"
         stroke="url(#paint12_linear)"
         strokeWidth=".5"
         initial={{
@@ -290,7 +288,6 @@ const Logo = () => {
       />
       <motion.path
         d="M130.182 15C119.988 16.0146 112 25.4769 112 37C112 48.5231 119.988 57.9854 130.182 59V54.9634C122 53.9644 115.636 46.303 115.636 37C115.636 27.697 122 20.0356 130.182 19.0366V15Z"
-        fill="url(#paint17_linear)"
         stroke="url(#paint17_linear)"
         strokeWidth="0.5"
         initial={{

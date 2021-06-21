@@ -86,7 +86,7 @@ const Carousel = () => {
     >
       <AnimatePresence>
         {slides.map((slide, index) => {
-          const { id, image } = slide;
+          const {  image } = slide;
 
           return (
             <motion.div
@@ -99,7 +99,6 @@ const Carousel = () => {
               animate="center"
               exit="exit"
             >
-              {/* <img src={image} alt="dog" /> */}
               <HeroBg image={image}></HeroBg>
             </motion.div>
           );

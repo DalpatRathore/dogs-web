@@ -1,4 +1,4 @@
-import React, { useContext, useReducer, useState } from "react";
+import React, { useContext, useState } from "react";
 import "./SearchBox.css";
 import { useHistory } from "react-router-dom";
 import SearchIcon from "@material-ui/icons/Search";
@@ -6,7 +6,6 @@ import CloseRoundedIcon from "@material-ui/icons/CloseRounded";
 import { SearchContext } from "../../contexts/SearchContext";
 
 const SearchBox = () => {
-  
   const history = useHistory();
   const [input, setInput] = useState("");
   const { dispatch } = useContext(SearchContext);
@@ -19,7 +18,6 @@ const SearchBox = () => {
       type: "SEARCH_TERM",
       payload: input,
     });
-    
   };
   const handleClearSearch = () => {
     setInput("");

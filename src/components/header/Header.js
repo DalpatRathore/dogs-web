@@ -1,23 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Header.css";
 import { Link } from "react-router-dom";
 import SearchBox from "../searchBox/SearchBox";
 import { FaBars, FaTimes } from "react-icons/fa";
-// import logo from "./logo.svg";
 import Logo from "./Logo";
 
 const Header = () => {
   const [showLinks, setShowLinks] = useState(false);
 
-  const handleShowLinks = () => {
-    setShowLinks(!showLinks);
-  };
   return (
     <header className="header">
       <nav className="header__navbar">
         <div className="header__logo">
           <Link to="/">
-            {/* <img src={logo} alt="dog breeds" /> */}
             <Logo></Logo>
           </Link>
         </div>

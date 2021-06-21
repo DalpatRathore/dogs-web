@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Rotating.css";
 import { largeImages, smallImages } from "../carousel/carouseldata";
-import HeroBg from "../hero-image-bg/HeroBg";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 const rotatingVariants = {
   enter: {
@@ -46,7 +45,6 @@ const Rotating = () => {
         return (
           <div className="rotating__slide" key={id}>
             <img src={image} alt="" />
-            {/* <HeroBg image={image}></HeroBg> */}
           </div>
         );
       })}

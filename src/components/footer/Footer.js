@@ -32,9 +32,9 @@ const Footer = () => {
             initial="enter"
             animate="center"
           >
-            <a href="#">
+            <span>
               <FaFacebook></FaFacebook>
-            </a>
+            </span>
           </motion.li>
           <motion.li
             className="footer__socialIcon"
@@ -42,9 +42,9 @@ const Footer = () => {
             initial="enter"
             animate="center"
           >
-            <a href="#">
+            <span>
               <FaTwitter></FaTwitter>
-            </a>
+            </span>
           </motion.li>
           <motion.li
             className="footer__socialIcon"
@@ -52,9 +52,9 @@ const Footer = () => {
             initial="enter"
             animate="center"
           >
-            <a href="#">
+            <span>
               <FaInstagram></FaInstagram>
-            </a>
+            </span>
           </motion.li>
         </ul>
       </div>

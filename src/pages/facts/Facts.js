@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./Facts.css";
-// import responseFacts from "../../fixtures/responseFacts";
 import Photo from "../../components/photo/Photo";
 import InfoBadge from "../../components/infoBadge/InfoBadge";
 import Loader from "../../components/loader/Loader";
@@ -11,23 +10,9 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import { v1 as uuidv1 } from "uuid";
+import { InView } from "react-intersection-observer";
 import ErrorMessage from "../../components/error-message/ErrorMessage";
 import ScrollProgress from "../../components/scroll-progress/ScrollProgress";
-
-const infoVariants = {
-  enter: {
-    scale: 0,
-    opacity: 0,
-  },
-  center: {
-    scale: 1,
-    opacity: 1,
-    transition: {
-      duration: 1,
-    },
-  },
-};
 
 const resultsVariants = {
   enter: {
@@ -117,54 +102,63 @@ const Facts = () => {
       </div>
 
       {facts.map((fact, index) => (
-        <motion.div
-          className="facts__container"
-          key={fact.id}
-          variants={infoVariants}
-          initial="enter"
-          animate="center"
-        >
-          <div className="facts__info">
-            <div className="facts__badgeWrapper">
-              <span>{index + 1}</span>
-            </div>
-            <InfoBadge labelStatic="Name" labelDynamic={fact.name}></InfoBadge>
-            <InfoBadge
-              labelStatic="Breed Group"
-              labelDynamic={fact.breed_group}
-            ></InfoBadge>
-            <InfoBadge
-              labelStatic="Origin"
-              labelDynamic={fact.origin}
-            ></InfoBadge>
-            <InfoBadge
-              labelStatic="Temperament"
-              labelDynamic={fact.temperament}
-            ></InfoBadge>
-            <InfoBadge
-              labelStatic="Bred For"
-              labelDynamic={fact.bred_for}
-            ></InfoBadge>
-            <InfoBadge
-              labelStatic="Life Span"
-              labelDynamic={fact.life_span}
-            ></InfoBadge>
-            <InfoBadge
-              labelStatic="Weight"
-              labelDynamic={`Imperial: "${fact.weight.imperial}" & Metric: "${fact.weight.metric}"`}
-            ></InfoBadge>
-            <InfoBadge
-              labelStatic=" Height"
-              labelDynamic={`Imperial: "${fact.height.imperial}" & Metric: "${fact.height.metric}"`}
-            ></InfoBadge>
-          </div>
-          <div className="facts__imageContainer">
-            <h1 className="facts__nameHeading">{fact.name}</h1>
-            <div>
-              <Photo imageUrl={fact.image.url} altName={fact.name}></Photo>
-            </div>
-          </div>
-        </motion.div>
+        <InView threshold={0} triggerOnce="true" key={fact.id}>
+          {({ inView, ref }) => (
+            <motion.div
+              className="facts__container"
+              ref={ref}
+              initial={{ scale: 0, opacity: 0 }}
+              animate={inView && { scale: 1, opacity: 1 }}
+              // transition={{
+              //   duration: 0.3,
+              // }}
+            >
+              <div className="facts__info">
+                <div className="facts__badgeWrapper">
+                  <span>{index + 1}</span>
+                </div>
+                <InfoBadge
+                  labelStatic="Name"
+                  labelDynamic={fact.name}
+                ></InfoBadge>
+                <InfoBadge
+                  labelStatic="Breed Group"
+                  labelDynamic={fact.breed_group}
+                ></InfoBadge>
+                <InfoBadge
+                  labelStatic="Origin"
+                  labelDynamic={fact.origin}
+                ></InfoBadge>
+                <InfoBadge
+                  labelStatic="Temperament"
+                  labelDynamic={fact.temperament}
+                ></InfoBadge>
+                <InfoBadge
+                  labelStatic="Bred For"
+                  labelDynamic={fact.bred_for}
+                ></InfoBadge>
+                <InfoBadge
+                  labelStatic="Life Span"
+                  labelDynamic={fact.life_span}
+                ></InfoBadge>
+                <InfoBadge
+                  labelStatic="Weight"
+                  labelDynamic={`Imperial: "${fact.weight.imperial}" & Metric: "${fact.weight.metric}"`}
+                ></InfoBadge>
+                <InfoBadge
+                  labelStatic=" Height"
+                  labelDynamic={`Imperial: "${fact.height.imperial}" & Metric: "${fact.height.metric}"`}
+                ></InfoBadge>
+              </div>
+              <div className="facts__imageContainer">
+                <h1 className="facts__nameHeading">{fact.name}</h1>
+                <div>
+                  <Photo imageUrl={fact.image.url} altName={fact.name}></Photo>
+                </div>
+              </div>
+            </motion.div>
+          )}
+        </InView>
       ))}
     </div>
   );

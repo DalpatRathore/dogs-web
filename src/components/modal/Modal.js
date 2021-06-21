@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import ReactDOM from "react-dom";
 import { FaTimes } from "react-icons/fa";
 import "./Modal.css";
@@ -6,16 +6,17 @@ import "./Modal.css";
 const Modal = props => {
   const { imageUrl, isModalOpen, handleClose } = props;
 
-  const handleKeyDown = e => {
-    if (e.keyCode === 27) {
-      handleClose();
-      console.log("modal close");
-    }
-  };
+  const handleKeyDown = useCallback(
+    e => {
+      if (e.keyCode === 27) {
+        handleClose();
+      }
+    },
+    [handleClose]
+  );
 
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);
-
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
