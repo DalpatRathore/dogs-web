@@ -12,6 +12,7 @@
   -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
           box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   border-bottom: 1px solid rgba(7, 45, 65, 0.5);
+  overflow: hidden;
 }
 
 .header__navbar {
@@ -31,16 +32,34 @@
 }
 
 .header__logo {
-  width: 14rem;
-  border-radius: 0.25rem;
+  width: 8rem;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.header__logo img {
+.header__logo-svg {
   width: 100%;
-  border-radius: 0.25rem;
-  -o-object-fit: contain;
-     object-fit: contain;
   display: block;
+}
+
+.header__logoSlogan {
+  font-size: 0.6rem;
+  letter-spacing: 0.01rem;
+  font-weight: bold;
+  font-style: italic;
+  color: #230863;
 }
 
 .header__navLinks {
@@ -178,7 +197,11 @@
             justify-content: space-between;
   }
   .header__logo {
-    width: 16rem;
+    width: 11rem;
+  }
+  .header__logoSlogan {
+    font-size: 0.7rem;
+    letter-spacing: 0.05rem;
   }
   .header__toggleSearchBox {
     display: none;
@@ -236,9 +259,6 @@
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
-  }
-  .header__logo {
-    width: 20rem;
   }
   .header__navLinks a {
     padding: 0.5rem 1rem;

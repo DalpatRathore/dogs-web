@@ -4,6 +4,20 @@ import { Link } from "react-router-dom";
 import SearchBox from "../searchBox/SearchBox";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Logo from "./Logo";
+import { motion } from "framer-motion";
+
+const sloganVariants = {
+  enter: {
+    x: "100vw",
+  },
+  center: {
+    x: 0,
+
+    transition: {
+      x: { type: "spring", bounce: 0.5, duration: 3, delay: 15 },
+    },
+  },
+};
 
 const Header = () => {
   const [showLinks, setShowLinks] = useState(false);
@@ -15,11 +29,19 @@ const Header = () => {
           <Link to="/">
             <Logo></Logo>
           </Link>
+          <motion.small
+            className="header__logoSlogan"
+            variants={sloganVariants}
+            initial="enter"
+            animate="center"
+          >
+            Adopt, Don't Shop
+          </motion.small>
         </div>
 
         <nav className="header__navLinks">
           <Link to="/">Home</Link>
-          <Link to="/pics">Images</Link>
+          <Link to="/pics">Photos</Link>
           <Link to="/facts">Facts</Link>
         </nav>
         <nav

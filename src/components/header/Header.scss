@@ -12,6 +12,7 @@
   backdrop-filter: blur(0.5rem);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   border-bottom: 1px solid rgba(7, 45, 65, 0.5);
+  overflow: hidden;
 
   &__navbar {
     margin: 0 auto;
@@ -24,14 +25,23 @@
   }
 
   &__logo {
-    width: 14rem;
-    border-radius: 0.25rem;
-    & img {
+    width: 8rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    &-svg {
       width: 100%;
-      border-radius: 0.25rem;
-      object-fit: contain;
       display: block;
     }
+  }
+  &__logoSlogan {
+    font-size: 0.6rem;
+    letter-spacing: 0.01rem;
+    font-weight: bold;
+    font-style: italic;
+    color: rgb(35, 8, 99);
   }
 
   &__navLinks {
@@ -124,8 +134,13 @@
     flex-direction: row;
     justify-content: space-between;
     &__logo {
-      width: 16rem;
+      width: 11rem;
     }
+    &__logoSlogan {
+      font-size: 0.7rem;
+      letter-spacing: 0.05rem;
+    }
+
     &__toggleSearchBox {
       display: none;
     }
@@ -173,9 +188,6 @@
     flex-direction: row;
     justify-content: space-between;
 
-    &__logo {
-      width: 20rem;
-    }
     &__navLinks a {
       padding: 0.5rem 1rem;
       letter-spacing: 0.25rem;
