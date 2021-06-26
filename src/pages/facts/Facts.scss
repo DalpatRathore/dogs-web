@@ -1,6 +1,5 @@
 .facts {
   min-height: calc(100vh - var(--headerHeight) - var(--footerHeight));
-
   background: linear-gradient(
     90deg,
     rgba(6, 59, 158, 0.5),
@@ -61,6 +60,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+  &__containerOverflow {
+    overflow: hidden;
   }
 
   &__container {

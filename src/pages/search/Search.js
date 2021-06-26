@@ -72,67 +72,69 @@ const Search = () => {
           <span>{searchResults.length}</span>Results
         </motion.h3>
       </div>
-
-      {searchResults.length > 0 ? (
-        searchResults.map((result, index) => (
-          <InView threshold={0} triggerOnce="true" key={result.id}>
-            {({ inView, ref }) => (
-              <motion.div
-                className="search__container"
-                ref={ref}
-                initial={{ scale: 0, opacity: 0 }}
-                animate={inView && { scale: 1, opacity: 1 }}
-                // transition={{
-                //   duration: 0.3,
-                // }}
-              >
-                <div className="search__info">
-                  <div className="search__badgeWrapper">
-                    <span>{index + 1}</span>
+      <div className="search__containerOverflow">
+        {searchResults.length > 0 ? (
+          searchResults.map((result, index) => (
+            <InView threshold={0} triggerOnce="true" key={result.id}>
+              {({ inView, ref }) => (
+                <motion.div
+                  className="search__container"
+                  ref={ref}
+                  initial={{ x: "100%", opacity: 0 }}
+                  animate={inView && { x: 0, opacity: 1 }}
+                  transition={{
+                    x: { type: "spring", bounce: 0.3, duration: 0.8 },
+                    opacity: { duration: 0.5 },
+                  }}
+                >
+                  <div className="search__info">
+                    <div className="search__badgeWrapper">
+                      <span>{index + 1}</span>
+                    </div>
+                    <InfoBadge
+                      labelStatic="Name"
+                      labelDynamic={result.name}
+                    ></InfoBadge>
+                    <InfoBadge
+                      labelStatic="Breed Group"
+                      labelDynamic={result.breed_group}
+                    ></InfoBadge>
+                    <InfoBadge
+                      labelStatic="Origin"
+                      labelDynamic={result.origin}
+                    ></InfoBadge>
+                    <InfoBadge
+                      labelStatic="Temperament"
+                      labelDynamic={result.temperament}
+                    ></InfoBadge>
+                    <InfoBadge
+                      labelStatic="Bred For"
+                      labelDynamic={result.bred_for}
+                    ></InfoBadge>
+                    <InfoBadge
+                      labelStatic="Life Span"
+                      labelDynamic={result.life_span}
+                    ></InfoBadge>
+                    <InfoBadge
+                      labelStatic="Weight"
+                      labelDynamic={`Imperial: "${result.weight.imperial}" & Metric: "${result.weight.metric}"`}
+                    ></InfoBadge>
+                    <InfoBadge
+                      labelStatic=" Height"
+                      labelDynamic={`Imperial: "${result.height.imperial}" & Metric: "${result.height.metric}"`}
+                    ></InfoBadge>
                   </div>
-                  <InfoBadge
-                    labelStatic="Name"
-                    labelDynamic={result.name}
-                  ></InfoBadge>
-                  <InfoBadge
-                    labelStatic="Breed Group"
-                    labelDynamic={result.breed_group}
-                  ></InfoBadge>
-                  <InfoBadge
-                    labelStatic="Origin"
-                    labelDynamic={result.origin}
-                  ></InfoBadge>
-                  <InfoBadge
-                    labelStatic="Temperament"
-                    labelDynamic={result.temperament}
-                  ></InfoBadge>
-                  <InfoBadge
-                    labelStatic="Bred For"
-                    labelDynamic={result.bred_for}
-                  ></InfoBadge>
-                  <InfoBadge
-                    labelStatic="Life Span"
-                    labelDynamic={result.life_span}
-                  ></InfoBadge>
-                  <InfoBadge
-                    labelStatic="Weight"
-                    labelDynamic={`Imperial: "${result.weight.imperial}" & Metric: "${result.weight.metric}"`}
-                  ></InfoBadge>
-                  <InfoBadge
-                    labelStatic=" Height"
-                    labelDynamic={`Imperial: "${result.height.imperial}" & Metric: "${result.height.metric}"`}
-                  ></InfoBadge>
-                </div>
-              </motion.div>
-            )}
-          </InView>
-        ))
-      ) : (
-        <div className="search__infoMsgContainer">
-          <img src="/images/loader-3.gif" alt="" />
-          <p>Sorry! No Information Available</p>
-        </div>
-      )}
+                </motion.div>
+              )}
+            </InView>
+          ))
+        ) : (
+          <div className="search__infoMsgContainer">
+            <img src="/images/loader-3.gif" alt="" />
+            <p>Sorry! No Information Available</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

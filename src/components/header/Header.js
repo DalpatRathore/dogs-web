@@ -8,13 +8,15 @@ import { motion } from "framer-motion";
 
 const sloganVariants = {
   enter: {
-    x: "100vw",
+    x: "80vw",
+    opacity: "0",
   },
   center: {
-    x: 0,
-
+    x: "0",
+    opacity: "1",
     transition: {
-      x: { type: "spring", bounce: 0.5, duration: 3, delay: 15 },
+      x: { type: "spring", bounce: 0.5, duration: 3, delay: 10 },
+      opacity: { duration: 0.1, delay: 10 },
     },
   },
 };
@@ -55,7 +57,7 @@ const Header = () => {
             Home
           </Link>
           <Link to="/pics" onClick={() => setShowLinks(!showLinks)}>
-            Images
+            Photos
           </Link>
           <Link to="/facts" onClick={() => setShowLinks(!showLinks)}>
             Facts

@@ -86,6 +86,10 @@
           justify-content: center;
 }
 
+.facts__containerOverflow {
+  overflow: hidden;
+}
+
 .facts__container {
   margin: 3rem auto 5rem auto;
   width: 85vw;

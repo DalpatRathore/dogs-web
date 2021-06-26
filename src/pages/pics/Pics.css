@@ -6,6 +6,7 @@
 
 .pics__container {
   height: 100%;
+  width: 100%;
   max-width: 1900px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -38,9 +39,9 @@
 }
 
 .pics__photosContainer {
-  -webkit-box-flex: 0.7;
-      -ms-flex: 0.7;
-          flex: 0.7;
+  -webkit-box-flex: 0.65;
+      -ms-flex: 0.65;
+          flex: 0.65;
   min-height: calc(100vh - var(--headerHeight) - var(--footerHeight));
   max-height: calc(100vh - var(--headerHeight) - var(--footerHeight));
   overflow-y: scroll;
@@ -112,9 +113,9 @@
   display: inline-block;
   text-transform: capitalize;
   letter-spacing: 0.05rem;
-  margin: 0 0.2rem;
-  font-size: 1rem;
-  padding: 0.3rem 0.5rem;
+  margin: 0 0.1rem;
+  font-size: 0.8rem;
+  padding: 0.3rem 0.2rem;
   border-radius: 0.25rem;
   color: #fff;
   font-weight: 400;
@@ -222,9 +223,9 @@
 }
 
 .pics__categoryContainer {
-  -webkit-box-flex: 0.3;
-      -ms-flex: 0.3;
-          flex: 0.3;
+  -webkit-box-flex: 0.35;
+      -ms-flex: 0.35;
+          flex: 0.35;
   min-height: calc(100vh - var(--headerHeight) - var(--footerHeight));
   max-height: calc(100vh - var(--headerHeight) - var(--footerHeight));
   padding-bottom: 3.5rem;
@@ -280,7 +281,8 @@
   transition: border-radius 0.3s ease-in-out, box-shadow 0.5s ease-in-out, color 0.3s ease-in-out, background 0.3s ease-in-out;
   transition: border-radius 0.3s ease-in-out, box-shadow 0.5s ease-in-out, color 0.3s ease-in-out, background 0.3s ease-in-out, -webkit-box-shadow 0.5s ease-in-out;
   cursor: pointer;
-  font-size: 0.5rem;
+  letter-spacing: 0.03rem;
+  font-size: 0.55rem;
   padding: 0.3rem;
   margin: 0.5rem 0.1rem;
   position: relative;

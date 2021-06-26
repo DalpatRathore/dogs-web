@@ -57,6 +57,10 @@
   font-size: 1.2rem;
 }
 
+.search__containerOverflow {
+  overflow: hidden;
+}
+
 .search__container {
   display: -webkit-box;
   display: -ms-flexbox;

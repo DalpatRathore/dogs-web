@@ -100,66 +100,71 @@ const Facts = () => {
           Exhibiting <span>{facts.length}</span>Records
         </motion.h1>
       </div>
-
-      {facts.map((fact, index) => (
-        <InView threshold={0} triggerOnce="true" key={fact.id}>
-          {({ inView, ref }) => (
-            <motion.div
-              className="facts__container"
-              ref={ref}
-              initial={{ scale: 0, opacity: 0 }}
-              animate={inView && { scale: 1, opacity: 1 }}
-              // transition={{
-              //   duration: 0.3,
-              // }}
-            >
-              <div className="facts__info">
-                <div className="facts__badgeWrapper">
-                  <span>{index + 1}</span>
+      <div className="facts__containerOverflow">
+        {facts.map((fact, index) => (
+          <InView threshold={0} triggerOnce="true" key={fact.id}>
+            {({ inView, ref }) => (
+              <motion.div
+                className="facts__container"
+                ref={ref}
+                initial={{ x: "100%", opacity: 0 }}
+                animate={inView && { x: 0, opacity: 1 }}
+                transition={{
+                  x: { type: "spring", bounce: 0.3, duration: 0.8 },
+                  opacity: { duration: 0.5 },
+                }}
+              >
+                <div className="facts__info">
+                  <div className="facts__badgeWrapper">
+                    <span>{index + 1}</span>
+                  </div>
+                  <InfoBadge
+                    labelStatic="Name"
+                    labelDynamic={fact.name}
+                  ></InfoBadge>
+                  <InfoBadge
+                    labelStatic="Breed Group"
+                    labelDynamic={fact.breed_group}
+                  ></InfoBadge>
+                  <InfoBadge
+                    labelStatic="Origin"
+                    labelDynamic={fact.origin}
+                  ></InfoBadge>
+                  <InfoBadge
+                    labelStatic="Temperament"
+                    labelDynamic={fact.temperament}
+                  ></InfoBadge>
+                  <InfoBadge
+                    labelStatic="Bred For"
+                    labelDynamic={fact.bred_for}
+                  ></InfoBadge>
+                  <InfoBadge
+                    labelStatic="Life Span"
+                    labelDynamic={fact.life_span}
+                  ></InfoBadge>
+                  <InfoBadge
+                    labelStatic="Weight"
+                    labelDynamic={`Imperial: "${fact.weight.imperial}" & Metric: "${fact.weight.metric}"`}
+                  ></InfoBadge>
+                  <InfoBadge
+                    labelStatic=" Height"
+                    labelDynamic={`Imperial: "${fact.height.imperial}" & Metric: "${fact.height.metric}"`}
+                  ></InfoBadge>
                 </div>
-                <InfoBadge
-                  labelStatic="Name"
-                  labelDynamic={fact.name}
-                ></InfoBadge>
-                <InfoBadge
-                  labelStatic="Breed Group"
-                  labelDynamic={fact.breed_group}
-                ></InfoBadge>
-                <InfoBadge
-                  labelStatic="Origin"
-                  labelDynamic={fact.origin}
-                ></InfoBadge>
-                <InfoBadge
-                  labelStatic="Temperament"
-                  labelDynamic={fact.temperament}
-                ></InfoBadge>
-                <InfoBadge
-                  labelStatic="Bred For"
-                  labelDynamic={fact.bred_for}
-                ></InfoBadge>
-                <InfoBadge
-                  labelStatic="Life Span"
-                  labelDynamic={fact.life_span}
-                ></InfoBadge>
-                <InfoBadge
-                  labelStatic="Weight"
-                  labelDynamic={`Imperial: "${fact.weight.imperial}" & Metric: "${fact.weight.metric}"`}
-                ></InfoBadge>
-                <InfoBadge
-                  labelStatic=" Height"
-                  labelDynamic={`Imperial: "${fact.height.imperial}" & Metric: "${fact.height.metric}"`}
-                ></InfoBadge>
-              </div>
-              <div className="facts__imageContainer">
-                <h1 className="facts__nameHeading">{fact.name}</h1>
-                <div>
-                  <Photo imageUrl={fact.image.url} altName={fact.name}></Photo>
+                <div className="facts__imageContainer">
+                  <h1 className="facts__nameHeading">{fact.name}</h1>
+                  <div>
+                    <Photo
+                      imageUrl={fact.image.url}
+                      altName={fact.name}
+                    ></Photo>
+                  </div>
                 </div>
-              </div>
-            </motion.div>
-          )}
-        </InView>
-      ))}
+              </motion.div>
+            )}
+          </InView>
+        ))}
+      </div>
     </div>
   );
 };
