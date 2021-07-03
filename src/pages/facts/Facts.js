@@ -4,6 +4,7 @@ import Photo from "../../components/photo/Photo";
 import InfoBadge from "../../components/infoBadge/InfoBadge";
 import Loader from "../../components/loader/Loader";
 import axios from "axios";
+import { FiChevronsLeft, FiChevronsRight } from "react-icons/fi";
 import {
   motion,
   useViewportScroll,
@@ -14,7 +15,7 @@ import { InView } from "react-intersection-observer";
 import ErrorMessage from "../../components/error-message/ErrorMessage";
 import ScrollProgress from "../../components/scroll-progress/ScrollProgress";
 
-const resultsVariants = {
+const paginationVariants = {
   enter: {
     x: "-100vw",
     opacity: 0,
@@ -33,6 +34,7 @@ const Facts = () => {
   const [loadingRecords, setLoadingRecords] = useState(true);
   const [someError, setSomeError] = useState(false);
   const [facts, setFacts] = useState([]);
+  const [count, setCount] = useState(0);
 
   const [isComplete, setIsComplete] = useState(false);
   const { scrollYProgress } = useViewportScroll();
@@ -45,7 +47,7 @@ const Facts = () => {
     setLoadingRecords(true);
     const source = axios.CancelToken.source();
     axios
-      .get("https://api.thedogapi.com/v1/breeds", {
+      .get(`https://api.thedogapi.com/v1/breeds?limit=25&page=${count}`, {
         cancelToken: source.token,
       })
       .then(response => {
@@ -66,7 +68,13 @@ const Facts = () => {
     return () => {
       source.cancel();
     };
-  }, []);
+  }, [count]);
+  const increaseCount = () => {
+    setCount(prevCount => prevCount + 1);
+  };
+  const decreaseCount = () => {
+    setCount(prevCount => prevCount - 1);
+  };
 
   if (loadingRecords) {
     return (
@@ -89,16 +97,56 @@ const Facts = () => {
 
   return (
     <div className="facts">
-      <div className="facts__resultHeading">
+      <div className="facts__pagination">
         <span className="facts__scrollProgressContainer">
           <ScrollProgress
             isComplete={isComplete}
             pathLength={pathLength}
           ></ScrollProgress>
         </span>
-        <motion.h1 variants={resultsVariants} initial="enter" animate="center">
-          Exhibiting <span>{facts.length}</span>Records
-        </motion.h1>
+        <motion.div
+          variants={paginationVariants}
+          initial="enter"
+          animate="center"
+        >
+          <span
+            className={
+              count > 0 ? "facts__chevron" : "facts__chevron--disabled"
+            }
+            onClick={() => setCount(0)}
+          >
+            <FiChevronsLeft className="facts__chevronIcon"></FiChevronsLeft>
+          </span>
+          <span
+            className={
+              count > 0 ? "facts__btnCount" : "facts__btnCount--disabled"
+            }
+            onClick={decreaseCount}
+          >
+            Prev
+          </span>
+          <div className="facts__result">
+            <span>{count + 1}/7</span>
+            <span>Pages</span>
+          </div>
+
+          <span
+            className={
+              count < 6 ? "facts__btnCount" : "facts__btnCount--disabled"
+            }
+            onClick={increaseCount}
+          >
+            Next
+          </span>
+          <span
+            className={
+              count < 6 ? "facts__chevron" : "facts__chevron--disabled"
+            }
+            onClick={() => setCount(6)}
+          >
+            <FiChevronsRight className="facts__chevronIcon"></FiChevronsRight>
+          </span>
+        </motion.div>
       </div>
       <div className="facts__containerOverflow">
         {facts.map((fact, index) => (

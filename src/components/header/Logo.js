@@ -19,7 +19,7 @@ const logoVariants2 = {
   center: {
     pathLength: 1,
     transition: {
-      duration: 8,
+      duration: 9,
     },
   },
 };
@@ -63,8 +63,8 @@ const Logo = () => {
           fill: "url(#paint2_logo_linear)",
           pathLength: 1,
           transition: {
-            fill: { delay: 15 },
-            pathLength: { delay: 8, duration: 3 },
+            fill: { delay: 12 },
+            pathLength: { delay: 5, duration: 3 },
           },
         }}
       />
@@ -81,8 +81,8 @@ const Logo = () => {
           fill: "url(#paint4_logo_linear)",
           pathLength: 1,
           transition: {
-            fill: { delay: 15 },
-            pathLength: { delay: 8, duration: 3 },
+            fill: { delay: 12 },
+            pathLength: { delay: 5, duration: 3 },
           },
         }}
       />
@@ -99,8 +99,8 @@ const Logo = () => {
           fill: "url(#paint6_logo_linear)",
           pathLength: 1,
           transition: {
-            fill: { delay: 15 },
-            pathLength: { delay: 8, duration: 3 },
+            fill: { delay: 12 },
+            pathLength: { delay: 5, duration: 3 },
           },
         }}
       />
@@ -117,8 +117,8 @@ const Logo = () => {
           fill: "url(#paint8_logo_linear)",
           pathLength: 1,
           transition: {
-            fill: { delay: 15 },
-            pathLength: { delay: 8, duration: 3 },
+            fill: { delay: 12 },
+            pathLength: { delay: 5, duration: 3 },
           },
         }}
       />
@@ -135,8 +135,8 @@ const Logo = () => {
           fill: "url(#paint10_logo_linear)",
           pathLength: 1,
           transition: {
-            fill: { delay: 15 },
-            pathLength: { delay: 8, duration: 3 },
+            fill: { delay: 12 },
+            pathLength: { delay: 5, duration: 3 },
           },
         }}
       />
@@ -163,8 +163,8 @@ const Logo = () => {
           fill: "url(#paint13_logo_linear)",
           pathLength: 1,
           transition: {
-            fill: { delay: 15 },
-            pathLength: { delay: 8, duration: 3 },
+            fill: { delay: 12 },
+            pathLength: { delay: 5, duration: 3 },
           },
         }}
       />
@@ -181,8 +181,8 @@ const Logo = () => {
           fill: "url(#paint15_logo_linear)",
           pathLength: 1,
           transition: {
-            fill: { delay: 15 },
-            pathLength: { delay: 8, duration: 3 },
+            fill: { delay: 12 },
+            pathLength: { delay: 5, duration: 3 },
           },
         }}
       />
@@ -199,8 +199,8 @@ const Logo = () => {
           fill: "url(#paint17_logo_linear)",
           pathLength: 1,
           transition: {
-            fill: { delay: 15 },
-            pathLength: { delay: 8, duration: 3 },
+            fill: { delay: 12 },
+            pathLength: { delay: 5, duration: 3 },
           },
         }}
       />
@@ -217,8 +217,8 @@ const Logo = () => {
           fill: "url(#paint19_logo_linear)",
           pathLength: 1,
           transition: {
-            fill: { delay: 15 },
-            pathLength: { delay: 8, duration: 3 },
+            fill: { delay: 12 },
+            pathLength: { delay: 5, duration: 3 },
           },
         }}
       />
@@ -235,8 +235,8 @@ const Logo = () => {
           fill: "url(#paint21_logo_linear)",
           pathLength: 1,
           transition: {
-            fill: { delay: 15 },
-            pathLength: { delay: 8, duration: 3 },
+            fill: { delay: 12 },
+            pathLength: { delay: 5, duration: 3 },
           },
         }}
       />

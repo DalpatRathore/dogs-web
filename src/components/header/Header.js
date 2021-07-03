@@ -15,8 +15,8 @@ const sloganVariants = {
     x: "0",
     opacity: "1",
     transition: {
-      x: { type: "spring", bounce: 0.5, duration: 3, delay: 10 },
-      opacity: { duration: 0.1, delay: 10 },
+      x: { type: "spring", bounce: 0.5, duration: 3, delay: 8 },
+      opacity: { duration: 0.1, delay: 8 },
     },
   },
 };
