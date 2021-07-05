@@ -33,14 +33,13 @@
   position: -webkit-sticky;
   position: sticky;
   top: var(--headerHeight);
+  margin: 0 auto;
   width: 100%;
+  max-width: 1900px;
   height: 3.5rem;
   z-index: 999;
-  background: rgba(0, 0, 0, 0.5);
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
+  background: #445;
   font-family: Cambria, sans-serif;
-  border-bottom: 1px solid #445;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -69,10 +68,27 @@
 
 .facts__scrollProgressContainer {
   position: absolute;
-  top: 20%;
-  left: 3%;
-  height: 100%;
-  margin-right: 0.5rem;
+  bottom: 0%;
+  left: 0%;
+  width: 100%;
+  height: 0.4rem;
+  background: rgba(189, 195, 199, 0.4);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(189, 195, 199, 0.5)), color-stop(50%, rgba(189, 195, 199, 0.75)), to(rgba(189, 195, 199, 0.5)));
+  background: linear-gradient(180deg, rgba(189, 195, 199, 0.5) 0%, rgba(189, 195, 199, 0.75) 50%, rgba(189, 195, 199, 0.5) 100%);
+  border: 1px solid rgba(31, 50, 78, 0.75);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.facts__scrollProgressContainer .progress {
+  width: 100%;
 }
 
 .facts__btnCount {
@@ -169,7 +185,7 @@
   margin: 0 0.3rem;
   padding: 0.5rem 0.2rem;
   border-radius: 0.25rem;
-  border: 0.11rem solid #454646;
+  border: 0.11rem solid rgba(38, 39, 39, 0.8);
   color: #fff;
   font-size: 0.9rem;
 }
@@ -177,7 +193,7 @@
 .facts__result > span {
   letter-spacing: 0.2rem;
   padding: 0.3rem;
-  border: 0.5px solid #454646;
+  border: 0.5px solid rgba(38, 39, 39, 0.5);
 }
 
 .facts__result > span:nth-child(1) {
@@ -198,7 +214,7 @@
 .facts__container {
   margin: 3rem auto 5rem auto;
   width: 85vw;
-  max-width: 1920px;
+  max-width: 1900px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -340,7 +356,7 @@
   top: 50%;
   left: 50%;
   width: 100%;
-  max-width: 1920px;
+  max-width: 1900px;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -360,6 +376,9 @@
   .facts__pagination {
     height: 4rem;
     letter-spacing: 0.12rem;
+  }
+  .facts__scrollProgressContainer {
+    height: 0.7rem;
   }
   .facts__btnCount {
     width: 3.5rem;
@@ -390,7 +409,7 @@
   .facts__result > span {
     letter-spacing: 0.2rem;
     padding: 0.3rem;
-    border: 1px solid #454646;
+    border: 1px solid rgba(38, 39, 39, 0.5);
   }
   .facts__container {
     width: 90vw;
@@ -456,6 +475,13 @@
 }
 
 @media screen and (min-width: 1024px) {
+  .facts__pagination {
+    height: 4.5rem;
+    letter-spacing: 0.12rem;
+  }
+  .facts__scrollProgressContainer {
+    height: 0.95rem;
+  }
   .facts__container {
     width: 90vw;
     -webkit-box-orient: horizontal;
@@ -477,6 +503,15 @@
   }
   .facts__badgeWrapper span {
     font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .facts__pagination {
+    height: 5.5rem;
+  }
+  .facts__scrollProgressContainer {
+    height: 1.2rem;
   }
 }
 /*# sourceMappingURL=Facts.css.map */

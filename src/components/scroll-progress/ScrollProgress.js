@@ -2,33 +2,39 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const ScrollProgress = props => {
-  const { isComplete, pathLength } = props;
+  const { pathLength } = props;
 
   return (
-    <svg width="50" height="50" viewBox="0 0 60 60">
+    <svg
+      className="progress"
+      viewBox="0 0 1920 15"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <motion.path
-        fill="none"
-        strokeWidth="5"
-        stroke="orange"
-        strokeDasharray="0 1"
-        d="M 0, 20 a 20, 20 0 1,0 40,0 a 20, 20 0 1,0 -40,0"
+        d="M1910 8C442.029 8 31.6789 8 10 8"
+        stroke="url(#paint0progress_linear)"
+        strokeWidth="11"
+        strokeLinecap="round"
+        strokeLinejoin="round"
         style={{
           pathLength,
-          rotate: 90,
-          translateX: 5,
-          translateY: 5,
-          scaleX: -1, // Reverse direction of line animation
+          scaleX: -1,
         }}
       />
-      <motion.path
-        fill="none"
-        strokeWidth="5"
-        stroke="orange"
-        d="M14,26 L 22,33 L 35,16"
-        initial={false}
-        strokeDasharray="0 1"
-        animate={{ pathLength: isComplete ? 1 : 0 }}
-      />
+      <defs>
+        <linearGradient
+          id="paint0progress_linear"
+          x1="962.323"
+          y1="17.5"
+          x2="962.323"
+          y2="0.5"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stopColor="#FA6800" />
+          <stop offset="1" stopColor="#1F324E" />
+        </linearGradient>
+      </defs>
     </svg>
   );
 };
