@@ -13,17 +13,17 @@ This web application use two dog-APIs:-
 
 ### `Dogs-Web Screenshot-1:`
 
-![Daily-Docket-1](https://github.com/DalpatRathore/Daily-Docket/blob/main/daily-docket-1.png)
+![Daily-Docket-1](https://github.com/DalpatRathore/Dogs-Web/blob/main/dogs-web-1.png)
 
 
 ### `Dogs-Web Screenshot-2:`
 
-![Daily-Docket-1](https://github.com/DalpatRathore/Daily-Docket/blob/main/daily-docket-2.png)
+![Daily-Docket-1](https://github.com/DalpatRathore/Dogs-Web/blob/main/dogs-web-2.png)
 
 
 ### `Dogs-Web Screenshot-3:`
 
-![Daily-Docket-1](https://github.com/DalpatRathore/Daily-Docket/blob/main/daily-docket-2.png)
+![Daily-Docket-1](https://github.com/DalpatRathore/Dogs-Web/blob/main/dogs-web-3.png)
 
 
 #### Visit: [Dogs-Web](https://dogs-fb.web.app/)
