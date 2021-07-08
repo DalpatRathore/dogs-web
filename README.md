@@ -11,6 +11,13 @@ This web application use two dog-APIs:-
 
 #### API Link-2: [https://dog.ceo/dog-api](https://dog.ceo/dog-api/)
 
+## Source of learning and inspiration:
+
+#### LearnWebCode: [Tutorial Link](https://youtu.be/AVmGmLFcukM)
+
+
+## Website Screenshots
+
 ### `Dogs-Web Screenshot-1:`
 
 ![Daily-Docket-1](https://github.com/DalpatRathore/Dogs-Web/blob/main/dogs-web-1.png)
