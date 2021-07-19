@@ -1,6 +1,6 @@
 # Dogs-Web
-#### Website-link:  [https://dogs-fb.web.app](https://dogs-fb.web.app/)
 
+#### Website-link: [https://dogs-fb.web.app](https://dogs-fb.web.app/)
 
 ## Description
 
@@ -15,22 +15,18 @@ This web application use two dog-APIs:-
 
 #### LearnWebCode: [Tutorial Link](https://youtu.be/AVmGmLFcukM)
 
-
 ## Website Screenshots
 
 ### `Dogs-Web Screenshot-1:`
 
-![Daily-Docket-1](https://github.com/DalpatRathore/Dogs-Web/blob/main/dogs-web-1.png)
-
+![Daily-Docket-1](https://github.com/DalpatRathore/Dogs-Web/blob/exhibit/display/dogs-web-1.png)
 
 ### `Dogs-Web Screenshot-2:`
 
-![Daily-Docket-1](https://github.com/DalpatRathore/Dogs-Web/blob/main/dogs-web-2.png)
-
+![Daily-Docket-1](https://github.com/DalpatRathore/Dogs-Web/blob/exhibit/display/dogs-web-2.png)
 
 ### `Dogs-Web Screenshot-3:`
 
-![Daily-Docket-1](https://github.com/DalpatRathore/Dogs-Web/blob/main/dogs-web-3.png)
-
+![Daily-Docket-1](https://github.com/DalpatRathore/Dogs-Web/blob/exhibit/display/dogs-web-3.png)
 
 #### Visit: [Dogs-Web](https://dogs-fb.web.app/)
