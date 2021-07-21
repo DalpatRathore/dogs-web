@@ -38,6 +38,12 @@
   border-radius: 0.5rem 0.5rem 0 0;
 }
 
+@supports not ((-webkit-backdrop-filter: blur(0.5rem)) or (backdrop-filter: blur(0.5rem))) {
+  .pics__container::before {
+    background: rgba(0, 0, 0, 0.75);
+  }
+}
+
 .pics__photosContainer {
   -webkit-box-flex: 0.65;
       -ms-flex: 0.65;
@@ -95,6 +101,12 @@
   -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.8);
           box-shadow: 0 3px 5px rgba(0, 0, 0, 0.8);
   border-radius: 0 0 0.5rem 0.5rem;
+}
+
+@supports not ((-webkit-backdrop-filter: blur(0.5rem)) or (backdrop-filter: blur(0.5rem))) {
+  .pics__headingContainer {
+    background: rgba(0, 0, 0, 0.75);
+  }
 }
 
 .pics__headingContainer h1 {
@@ -262,6 +274,12 @@
   font-size: 0.9rem;
   font-weight: 400;
   margin-bottom: 1rem;
+}
+
+@supports not ((-webkit-backdrop-filter: blur(0.5rem)) or (backdrop-filter: blur(0.5rem))) {
+  .pics__categoryContainer h1 {
+    background: rgba(0, 0, 0, 0.75);
+  }
 }
 
 .pics__categoryContainer::-webkit-scrollbar {

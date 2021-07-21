@@ -53,10 +53,10 @@
 
 @keyframes rotating-gallery {
   0% {
-    transform: perspective(100rem) rotateY(0deg);
+    transform: perspective(1600px) rotateY(0deg);
   }
   100% {
-    transform: perspective(100rem) rotateY(360deg);
+    transform: perspective(1600px) rotateY(360deg);
   }
 }
 
@@ -91,10 +91,10 @@
   }
   @keyframes rotating-gallery {
     0% {
-      transform: perspective(90rem) rotateY(0deg);
+      transform: perspective(1440px) rotateY(0deg);
     }
     100% {
-      transform: perspective(90rem) rotateY(360deg);
+      transform: perspective(1440px) rotateY(360deg);
     }
   }
 }

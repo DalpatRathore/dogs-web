@@ -14,6 +14,13 @@
   border-bottom: 1px solid rgba(7, 45, 65, 0.5);
 }
 
+@supports not ((-webkit-backdrop-filter: blur(0.5rem)) or (backdrop-filter: blur(0.5rem))) {
+  .header {
+    background: -webkit-gradient(linear, left bottom, left top, from(rgba(7, 45, 65, 0.8)), to(rgba(255, 165, 0, 0.8)));
+    background: linear-gradient(0deg, rgba(7, 45, 65, 0.8), rgba(255, 165, 0, 0.8));
+  }
+}
+
 .header__navbar {
   margin: 0 auto;
   height: 100%;
@@ -30,7 +37,7 @@
           justify-content: space-between;
 }
 
-.header__logo {
+.header__logoContainer {
   width: 8rem;
   position: relative;
   display: -webkit-box;
@@ -48,9 +55,8 @@
           justify-content: center;
 }
 
-.header__logo-svg {
-  width: 100%;
-  display: block;
+.header__logoSvg {
+  width: 8rem;
 }
 
 .header__logoSlogan {
@@ -195,7 +201,10 @@
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .header__logo {
+  .header__logoContainer {
+    width: 11rem;
+  }
+  .header__logoSvg {
     width: 11rem;
   }
   .header__logoSlogan {

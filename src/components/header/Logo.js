@@ -28,7 +28,7 @@ const Logo = () => {
   return (
     <svg
       viewBox="0 0 220 70"
-      className="header__logo-svg"
+      className="header__logoSvg"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >

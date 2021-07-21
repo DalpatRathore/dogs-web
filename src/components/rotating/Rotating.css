@@ -76,23 +76,23 @@
 
 @-webkit-keyframes rotating-gallery {
   0% {
-    -webkit-transform: perspective(100rem) rotateY(0deg);
-            transform: perspective(100rem) rotateY(0deg);
+    -webkit-transform: perspective(1600px) rotateY(0deg);
+            transform: perspective(1600px) rotateY(0deg);
   }
   100% {
-    -webkit-transform: perspective(100rem) rotateY(360deg);
-            transform: perspective(100rem) rotateY(360deg);
+    -webkit-transform: perspective(1600px) rotateY(360deg);
+            transform: perspective(1600px) rotateY(360deg);
   }
 }
 
 @keyframes rotating-gallery {
   0% {
-    -webkit-transform: perspective(100rem) rotateY(0deg);
-            transform: perspective(100rem) rotateY(0deg);
+    -webkit-transform: perspective(1600px) rotateY(0deg);
+            transform: perspective(1600px) rotateY(0deg);
   }
   100% {
-    -webkit-transform: perspective(100rem) rotateY(360deg);
-            transform: perspective(100rem) rotateY(360deg);
+    -webkit-transform: perspective(1600px) rotateY(360deg);
+            transform: perspective(1600px) rotateY(360deg);
   }
 }
 
@@ -132,22 +132,22 @@
   }
   @-webkit-keyframes rotating-gallery {
     0% {
-      -webkit-transform: perspective(90rem) rotateY(0deg);
-              transform: perspective(90rem) rotateY(0deg);
+      -webkit-transform: perspective(1440px) rotateY(0deg);
+              transform: perspective(1440px) rotateY(0deg);
     }
     100% {
-      -webkit-transform: perspective(90rem) rotateY(360deg);
-              transform: perspective(90rem) rotateY(360deg);
+      -webkit-transform: perspective(1440px) rotateY(360deg);
+              transform: perspective(1440px) rotateY(360deg);
     }
   }
   @keyframes rotating-gallery {
     0% {
-      -webkit-transform: perspective(90rem) rotateY(0deg);
-              transform: perspective(90rem) rotateY(0deg);
+      -webkit-transform: perspective(1440px) rotateY(0deg);
+              transform: perspective(1440px) rotateY(0deg);
     }
     100% {
-      -webkit-transform: perspective(90rem) rotateY(360deg);
-              transform: perspective(90rem) rotateY(360deg);
+      -webkit-transform: perspective(1440px) rotateY(360deg);
+              transform: perspective(1440px) rotateY(360deg);
     }
   }
 }

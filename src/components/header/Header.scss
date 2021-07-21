@@ -10,8 +10,16 @@
     rgba(255, 165, 0, 0.5)
   );
   backdrop-filter: blur(0.5rem);
+
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   border-bottom: 1px solid rgba(7, 45, 65, 0.5);
+  @supports not (backdrop-filter: blur(0.5rem)) {
+    background: linear-gradient(
+      0deg,
+      rgba(7, 45, 65, 0.8),
+      rgba(255, 165, 0, 0.8)
+    );
+  }
 
   &__navbar {
     margin: 0 auto;
@@ -23,17 +31,16 @@
     justify-content: space-between;
   }
 
-  &__logo {
+  &__logoContainer {
     width: 8rem;
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
-    &-svg {
-      width: 100%;
-      display: block;
-    }
+  }
+  &__logoSvg {
+    width: 8rem;
   }
   &__logoSlogan {
     font-size: 0.6rem;
@@ -132,7 +139,10 @@
   .header {
     flex-direction: row;
     justify-content: space-between;
-    &__logo {
+    &__logoContainer {
+      width: 11rem;
+    }
+    &__logoSvg {
       width: 11rem;
     }
     &__logoSlogan {
