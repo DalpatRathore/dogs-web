@@ -19,14 +19,14 @@ This web application use two dog-APIs:-
 
 ### `Dogs-Web Screenshot-1:`
 
-![Daily-Docket-1](https://github.com/DalpatRathore/Dogs-Web/blob/exhibit/display/dogs-web-1.jpg)
+![Daily-Docket-1](https://github.com/DalpatRathore/Dogs-Web/blob/exhibit/display/dogs-web-01.jpg)
 
 ### `Dogs-Web Screenshot-2:`
 
-![Daily-Docket-1](https://github.com/DalpatRathore/Dogs-Web/blob/exhibit/display/dogs-web-2.jpg)
+![Daily-Docket-1](https://github.com/DalpatRathore/Dogs-Web/blob/exhibit/display/dogs-web-02.jpg)
 
 ### `Dogs-Web Screenshot-3:`
 
-![Daily-Docket-1](https://github.com/DalpatRathore/Dogs-Web/blob/exhibit/display/dogs-web-3.jpg)
+![Daily-Docket-1](https://github.com/DalpatRathore/Dogs-Web/blob/exhibit/display/dogs-web-03.jpg)
 
 #### Visit: [Dogs-Web](https://dogs-fb.web.app/)
