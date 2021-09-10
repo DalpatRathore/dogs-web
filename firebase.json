@@ -1,7 +1,6 @@
 {
   "hosting": {
     "public": "build",
-    "site": "dogs-fb",
     "ignore": [
       "firebase.json",
       "**/.*",

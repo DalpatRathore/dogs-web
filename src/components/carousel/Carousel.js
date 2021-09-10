@@ -86,7 +86,7 @@ const Carousel = () => {
     >
       <AnimatePresence>
         {slides.map((slide, index) => {
-          const {  image } = slide;
+          const { image } = slide;
 
           return (
             <motion.div

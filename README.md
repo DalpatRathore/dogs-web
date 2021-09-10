@@ -1,6 +1,6 @@
 # Dogs-Web
 
-#### Website-link: [https://dogs-fb.web.app](https://dogs-fb.web.app/)
+#### Website-link: [https://dogsdetails.web.app](https://dogsdetails.web.app/)
 
 ## Description
 
@@ -29,4 +29,4 @@ This web application use two dog-APIs:-
 
 ![Daily-Docket-1](https://github.com/DalpatRathore/Dogs-Web/blob/exhibit/display/dogs-web-03.jpg)
 
-#### Visit: [Dogs-Web](https://dogs-fb.web.app/)
+#### Visit: [Dogs-Web](https://dogsdetails.web.app/)
