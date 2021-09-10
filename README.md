@@ -1,6 +1,6 @@
-# Dogs-Web
+# <img align="center" alt="" width="75" src="https://github.com/DalpatRathore/Dogs-Web/blob/main/public/icons/icon-192x192.png"> Dogs-Web
 
-#### Website-link: [https://dogsdetails.web.app](https://dogsdetails.web.app/)
+#### Web-link: [https://dogsdetails.web.app](https://dogsdetails.web.app/)
 
 ## Description
 
@@ -11,7 +11,7 @@ This web application use two dog-APIs:-
 
 #### API Link-2: [https://dog.ceo/dog-api](https://dog.ceo/dog-api/)
 
-## Source of learning and inspiration:
+## Source of Learning & Inspiration :
 
 #### LearnWebCode: [Tutorial Link](https://youtu.be/AVmGmLFcukM)
 
