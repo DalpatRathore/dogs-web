@@ -17,7 +17,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 0rem 0.5rem 0rem 0.5rem;
+  padding: 0 0.5rem 0 0.5rem;
   gap: 0.2rem;
   position: relative;
   margin: 0 auto;
@@ -27,8 +27,8 @@
 .pics__container::before {
   content: "";
   position: absolute;
-  bottom: 0rem;
-  left: 0rem;
+  bottom: 0;
+  left: 0;
   width: 100%;
   height: 3rem;
   background: rgba(0, 0, 0, 0.5);
@@ -249,7 +249,7 @@
 .pics__categoryContainer h1 {
   position: -webkit-sticky;
   position: sticky;
-  top: 0px;
+  top: 0;
   background: rgba(0, 0, 0, 0.5);
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
@@ -312,8 +312,8 @@
 
 .pics__breedCategory:hover {
   border-radius: 0.25rem;
-  -webkit-box-shadow: 0px 0px 3px black;
-          box-shadow: 0px 0px 3px black;
+  -webkit-box-shadow: 0 0 3px black;
+          box-shadow: 0 0 3px black;
   color: #fff;
   background: -webkit-gradient(linear, left bottom, left top, from(#2f1281), to(#2f1281));
   background: linear-gradient(0deg, #2f1281, #2f1281);

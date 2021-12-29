@@ -17,8 +17,8 @@
   width: 100%;
   -webkit-transition: width 0.5s ease-in-out;
   transition: width 0.5s ease-in-out;
-  -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
-          box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
   color: #230863;
   border: 0.11rem solid #230863;
   -webkit-box-shadow: 0 0 1px #111;

@@ -50,7 +50,7 @@
 .search__resultHeading span {
   margin-right: 0.3rem;
   display: inline-block;
-  padding: 0rem 0.5rem;
+  padding: 0 0.5rem;
   border-radius: 0.15rem;
   background: orange;
   color: #ececec;
@@ -118,7 +118,7 @@
 .search__badgeWrapper {
   position: absolute;
   top: -1rem;
-  left: 0rem;
+  left: 0;
   z-index: 101;
   border-radius: 0.25rem;
   background: rgba(0, 0, 0, 0.8);
