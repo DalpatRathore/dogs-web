@@ -7,7 +7,6 @@
     border-radius: 0.15rem;
     background-color: transparent;
     width: 100%;
-    transition: width 0.5s ease-in-out;
     color: rgb(35, 8, 99);
     border: 0.11rem solid rgb(35, 8, 99);
     box-shadow: 0 0 1px #111;
@@ -15,8 +14,7 @@
     letter-spacing: 0.15rem;
     font-size: 1rem;
     font-weight: 650;
-    transition: background-color 0.5s ease-out, color 0.51s ease-out,
-      box-shadow 0.52s ease-out;
+    transition: all 0.5s ease-out;
 
     &:hover,
     &:focus-within {

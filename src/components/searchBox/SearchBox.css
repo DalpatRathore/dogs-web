@@ -15,8 +15,6 @@
   border-radius: 0.15rem;
   background-color: transparent;
   width: 100%;
-  -webkit-transition: width 0.5s ease-in-out;
-  transition: width 0.5s ease-in-out;
   color: #230863;
   border: 0.11rem solid #230863;
   -webkit-box-shadow: 0 0 1px #111;
@@ -25,10 +23,8 @@
   letter-spacing: 0.15rem;
   font-size: 1rem;
   font-weight: 650;
-  -webkit-transition: background-color 0.5s ease-out, color 0.51s ease-out, -webkit-box-shadow 0.52s ease-out;
-  transition: background-color 0.5s ease-out, color 0.51s ease-out, -webkit-box-shadow 0.52s ease-out;
-  transition: background-color 0.5s ease-out, color 0.51s ease-out, box-shadow 0.52s ease-out;
-  transition: background-color 0.5s ease-out, color 0.51s ease-out, box-shadow 0.52s ease-out, -webkit-box-shadow 0.52s ease-out;
+  -webkit-transition: all 0.5s ease-out;
+  transition: all 0.5s ease-out;
 }
 
 .searchBox__form:hover, .searchBox__form:focus-within {
