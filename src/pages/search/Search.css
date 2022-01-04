@@ -71,7 +71,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 3rem auto 1rem auto;
+  margin: 3rem auto 1rem;
   width: 95vw;
   max-width: 1900px;
 }
