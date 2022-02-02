@@ -52,7 +52,7 @@
   cursor: pointer;
 }
 
-.footer__socialIcon span {
+.footer__socialIcon a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

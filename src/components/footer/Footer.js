@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.css";
 import { motion } from "framer-motion";
-import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 const iconsVariants = {
   enter: {
@@ -32,9 +32,9 @@ const Footer = () => {
             initial="enter"
             animate="center"
           >
-            <span>
-              <FaFacebook></FaFacebook>
-            </span>
+            <a href="https://www.linkedin.com/in/dalpatrathore">
+              <FaLinkedin></FaLinkedin>
+            </a>
           </motion.li>
           <motion.li
             className="footer__socialIcon"
@@ -42,9 +42,9 @@ const Footer = () => {
             initial="enter"
             animate="center"
           >
-            <span>
+            <a href="https://twitter.com/ingenuity_brain">
               <FaTwitter></FaTwitter>
-            </span>
+            </a>
           </motion.li>
           <motion.li
             className="footer__socialIcon"
@@ -52,9 +52,9 @@ const Footer = () => {
             initial="enter"
             animate="center"
           >
-            <span>
-              <FaInstagram></FaInstagram>
-            </span>
+            <a href="https://github.com/dalpatrathore">
+              <FaGithub></FaGithub>
+            </a>
           </motion.li>
         </ul>
       </div>
